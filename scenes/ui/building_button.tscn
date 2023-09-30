@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/placeholders/axe.png" type="Texture" id=1]
 [ext_resource path="res://scenes/ui/building_button.gd" type="Script" id=2]
 
-[node name="Sawmill" type="TextureButton"]
+[node name="BuildingButton" type="TextureButton"]
 margin_right = 50.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 50, 50 )

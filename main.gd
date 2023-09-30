@@ -22,13 +22,15 @@ func _process(delta):
 
 func _init_build_buttons():
 	for button in build_buttons:
-		button.connect("pressed", self, "_on_build_button_pressed", [button.name])
+		button.connect("pressed", self, "_on_build_button_pressed", [button.building])
 	cancel_build_button.connect("pressed", self, "_on_cancel_build_button_pressed")
 
 func _on_build_button_pressed(building_name):
 	currentState = State.BUILDING
-	print(building_name)
-	Global.want_to_build = building_name
+	for placeholders in build_placeholders.get_children():
+		placeholders.update_visibility(building_name)
 
 func _on_cancel_build_button_pressed():
 	currentState = State.NORMAL
+	for placeholders in build_placeholders.get_children():
+		placeholders.update_visibility("_")
