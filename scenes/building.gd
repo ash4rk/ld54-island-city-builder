@@ -4,8 +4,6 @@ extends Node
 class_name Building
 
 export var build_name: String = "empty"
-export var cost_logs: int = 0
-export var cost_rocks: int = 0
 export var cost_coins: int = 0
 export var income_time: float = 3.0
 export(int, FLAGS, "Coastal", "OnTheRocks", "OnTheSand", "Forest") var required_terrain = 0

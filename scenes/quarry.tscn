@@ -19,6 +19,7 @@ material = SubResource( 1 )
 
 [node name="Quarry" instance=ExtResource( 1 )]
 build_name = "Quarry"
+cost_coins = 50
 required_terrain = 2
 mesh = ExtResource( 3 )
 particle_image = ExtResource( 2 )
