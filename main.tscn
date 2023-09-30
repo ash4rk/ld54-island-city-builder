@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.254902, 0.611765, 0.184314, 1 )
+
+[sub_resource type="QuadMesh" id=2]
+size = Vector2( 500, 500 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.0235294, 0.360784, 1, 1 )
+
+[node name="Main" type="Node"]
+
+[node name="World" type="Spatial" parent="."]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="World"]
+transform = Transform( 0.866025, 0.25, -0.433013, 0, 0.866025, 0.5, 0.5, -0.433013, 0.75, 0, 3, 5 )
+
+[node name="Camera" type="Camera" parent="World"]
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5, 1 )
+current = true
+fov = 50.0
+
+[node name="Island" type="CSGCylinder" parent="World"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.987451, -6.29359 )
+material_override = SubResource( 1 )
+radius = 4.901
+
+[node name="CSGMesh" type="CSGMesh" parent="World"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.48114, -0.789192, -4.17184 )
+mesh = SubResource( 2 )
+material = SubResource( 3 )
+
+[node name="Menu" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+margin_left = 480.0
+margin_top = 254.0
+margin_right = 543.0
+margin_bottom = 346.0
+custom_constants/separation = 16
+
+[node name="StartButton" type="Button" parent="Menu/VBoxContainer"]
+margin_right = 63.0
+margin_bottom = 20.0
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="Menu/VBoxContainer"]
+margin_top = 36.0
+margin_right = 63.0
+margin_bottom = 56.0
+text = "Options"
+
+[node name="AboutButton" type="Button" parent="Menu/VBoxContainer"]
+margin_top = 72.0
+margin_right = 63.0
+margin_bottom = 92.0
+text = "About"
