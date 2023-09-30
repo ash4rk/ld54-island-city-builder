@@ -6,11 +6,10 @@ enum State { NORMAL, ACTIVE, RESTRICTED, CONSTRUCTED}
 onready var buildings_node = $"../../Buildings"
 
 var want_to_build = null
-var is_constracted: bool = false
 var currentState: int = State.NORMAL
 
 func _ready():
-	update_mesh_color()
+	_update_mesh_color()
 	$Area.connect("mouse_entered", self, "_on_area_mouse_entered")
 	$Area.connect("mouse_exited", self, "_on_area_mouse_exited")
 
@@ -18,15 +17,10 @@ func _on_area_mouse_entered():
 	if currentState == State.CONSTRUCTED:
 		return
 
-	match want_to_build:
-		"Sawmill":
-			change_state(State.ACTIVE)
-		"Quarry":
-			change_state(State.ACTIVE)
-		"Shipyard":
-			change_state(State.ACTIVE)
-		"_":
-			change_state(State.RESTRICTED)
+	if want_to_build == "_":
+		change_state(State.RESTRICTED)
+	else:
+		change_state(State.ACTIVE)
 
 func _on_area_mouse_exited():
 	if currentState == State.CONSTRUCTED:
@@ -36,9 +30,9 @@ func _on_area_mouse_exited():
 func change_state(new_state):
 	if currentState != new_state:
 		currentState = new_state
-		update_mesh_color()
+		_update_mesh_color()
 
-func update_mesh_color():
+func _update_mesh_color():
 	var color
 	match currentState:
 		State.NORMAL:
