@@ -1,5 +1,3 @@
 extends Node
 
-# TODO: Implement real function
-func is_builduing_allowed():
-	return true
+var want_to_build: String = "_"

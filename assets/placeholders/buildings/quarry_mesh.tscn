@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+
+[node name="QuarryMesh" type="CSGCylinder"]
+material = SubResource( 1 )

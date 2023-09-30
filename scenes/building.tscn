@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/building.gd" type="Script" id=1]
+[ext_resource path="res://assets/placeholders/buildings/building_mesh.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/placeholders/fish.png" type="Texture" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+resource_local_to_scene = true
+flags_transparent = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="QuadMesh" id=2]
+resource_local_to_scene = true
+material = SubResource( 1 )
+
+[node name="Building" type="Spatial"]
+script = ExtResource( 1 )
+mesh = ExtResource( 2 )
+
+[node name="IncomeTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="IncomeParticle" type="CPUParticles" parent="."]
+amount = 1
+mesh = SubResource( 2 )
+gravity = Vector3( 0, 20, 0 )

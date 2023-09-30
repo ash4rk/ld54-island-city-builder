@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+resource_local_to_scene = true
+albedo_color = Color( 0.345098, 0.917647, 0.227451, 1 )
+
+[node name="SawmillMesh" type="CSGCylinder"]
+material = SubResource( 1 )
