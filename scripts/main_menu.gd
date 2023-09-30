@@ -6,3 +6,4 @@ func _ready():
 	
 func _on_start_button_pressed():
 	self.hide()
+	$"../UI".show()

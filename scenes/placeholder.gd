@@ -29,10 +29,10 @@ func update_mesh_color():
 	var color
 	match currentState:
 		State.NORMAL:
-			color = Color.white
+			color = Color(1.0, 1.0, 1.0, 0.4)
 		State.ACTIVE:
-			color = Color.green
+			color = Color(0.0, 1.0, 0.0, 0.4)
 		State.RESTRICTED:
-			color = Color.red
+			color = Color(1.0, 0.0, 0.0, 0.4)
 	
 	self.material.albedo_color = color

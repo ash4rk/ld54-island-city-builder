@@ -1,30 +1,44 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scenes/placeholder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=2]
 [ext_resource path="res://assets/main_theme.tres" type="Theme" id=3]
+[ext_resource path="res://assets/placeholders/rock.png" type="Texture" id=4]
+[ext_resource path="res://assets/placeholders/coin.png" type="Texture" id=5]
+[ext_resource path="res://assets/placeholders/log.png" type="Texture" id=6]
+[ext_resource path="res://assets/placeholders/axe.png" type="Texture" id=7]
+[ext_resource path="res://assets/placeholders/bank.png" type="Texture" id=8]
+[ext_resource path="res://assets/placeholders/fishrod.png" type="Texture" id=9]
+[ext_resource path="res://assets/placeholders/hotel.png" type="Texture" id=10]
+[ext_resource path="res://assets/placeholders/pickaxe.png" type="Texture" id=11]
+[ext_resource path="res://main.gd" type="Script" id=12]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.254902, 0.611765, 0.184314, 1 )
 
 [sub_resource type="SpatialMaterial" id=4]
 resource_local_to_scene = true
+flags_transparent = true
 albedo_color = Color( 1, 1, 1, 0.439216 )
 
 [sub_resource type="SpatialMaterial" id=5]
 resource_local_to_scene = true
+flags_transparent = true
 albedo_color = Color( 1, 1, 1, 0.439216 )
 
 [sub_resource type="SpatialMaterial" id=6]
 resource_local_to_scene = true
+flags_transparent = true
 albedo_color = Color( 1, 1, 1, 0.439216 )
 
 [sub_resource type="SpatialMaterial" id=7]
 resource_local_to_scene = true
+flags_transparent = true
 albedo_color = Color( 1, 1, 1, 0.439216 )
 
 [sub_resource type="SpatialMaterial" id=8]
 resource_local_to_scene = true
+flags_transparent = true
 albedo_color = Color( 1, 1, 1, 0.439216 )
 
 [sub_resource type="QuadMesh" id=2]
@@ -34,6 +48,7 @@ size = Vector2( 500, 500 )
 albedo_color = Color( 0.0235294, 0.360784, 1, 1 )
 
 [node name="Main" type="Node"]
+script = ExtResource( 12 )
 
 [node name="World" type="Spatial" parent="."]
 
@@ -50,25 +65,26 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.987451, -6.29359 )
 material_override = SubResource( 1 )
 radius = 4.901
 
-[node name="PlaceHolders" type="Spatial" parent="World"]
+[node name="Placeholders" type="Spatial" parent="World"]
+visible = false
 
-[node name="Placeholder" parent="World/PlaceHolders" instance=ExtResource( 1 )]
+[node name="Placeholder" parent="World/Placeholders" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.43563, 0, -4.24142 )
 material = SubResource( 4 )
 
-[node name="Placeholder2" parent="World/PlaceHolders" instance=ExtResource( 1 )]
+[node name="Placeholder2" parent="World/Placeholders" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.18323, -2.38419e-07, -7.9028 )
 material = SubResource( 5 )
 
-[node name="Placeholder3" parent="World/PlaceHolders" instance=ExtResource( 1 )]
+[node name="Placeholder3" parent="World/Placeholders" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.791966, 2.38419e-07, -8.85548 )
 material = SubResource( 6 )
 
-[node name="Placeholder4" parent="World/PlaceHolders" instance=ExtResource( 1 )]
+[node name="Placeholder4" parent="World/Placeholders" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.89733, 0, -5.97198 )
 material = SubResource( 7 )
 
-[node name="Placeholder5" parent="World/PlaceHolders" instance=ExtResource( 1 )]
+[node name="Placeholder5" parent="World/Placeholders" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.752531, 4.76837e-07, -3.31177 )
 material = SubResource( 8 )
 
@@ -106,3 +122,132 @@ margin_top = 118.0
 margin_right = 166.0
 margin_bottom = 161.0
 text = "About"
+
+[node name="UI" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource( 3 )
+
+[node name="StatsContainer" type="PanelContainer" parent="UI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -130.0
+margin_top = 24.0
+margin_right = -40.0
+margin_bottom = 196.0
+
+[node name="GridContainer" type="GridContainer" parent="UI/StatsContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 83.0
+margin_bottom = 165.0
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/StatsContainer/GridContainer"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+texture = ExtResource( 6 )
+expand = true
+
+[node name="Label" type="Label" parent="UI/StatsContainer/GridContainer"]
+margin_left = 54.0
+margin_top = 6.0
+margin_right = 76.0
+margin_bottom = 43.0
+text = "0"
+
+[node name="TextureRect4" type="TextureRect" parent="UI/StatsContainer/GridContainer"]
+margin_top = 54.0
+margin_right = 50.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 50, 50 )
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Label2" type="Label" parent="UI/StatsContainer/GridContainer"]
+margin_left = 54.0
+margin_top = 60.0
+margin_right = 76.0
+margin_bottom = 97.0
+text = "0"
+
+[node name="TextureRect5" type="TextureRect" parent="UI/StatsContainer/GridContainer"]
+margin_top = 108.0
+margin_right = 50.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 50, 50 )
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Label3" type="Label" parent="UI/StatsContainer/GridContainer"]
+margin_left = 54.0
+margin_top = 114.0
+margin_right = 76.0
+margin_bottom = 151.0
+text = "0"
+
+[node name="CancelBuildButton" type="Button" parent="UI"]
+margin_left = 658.0
+margin_top = 459.0
+margin_right = 692.0
+margin_bottom = 502.0
+text = "X"
+
+[node name="BuildingContainer" type="PanelContainer" parent="UI"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -148.0
+margin_top = -104.0
+margin_right = 148.0
+margin_bottom = -40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/BuildingContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 289.0
+margin_bottom = 57.0
+custom_constants/separation = 8
+
+[node name="Sawmill" type="TextureButton" parent="UI/BuildingContainer/HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+texture_normal = ExtResource( 7 )
+expand = true
+
+[node name="Quarry" type="TextureButton" parent="UI/BuildingContainer/HBoxContainer"]
+margin_left = 58.0
+margin_right = 108.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+texture_normal = ExtResource( 11 )
+expand = true
+
+[node name="Shipyard" type="TextureButton" parent="UI/BuildingContainer/HBoxContainer"]
+margin_left = 116.0
+margin_right = 166.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+texture_normal = ExtResource( 9 )
+expand = true
+
+[node name="Bank" type="TextureButton" parent="UI/BuildingContainer/HBoxContainer"]
+margin_left = 174.0
+margin_right = 224.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+texture_normal = ExtResource( 8 )
+expand = true
+
+[node name="Hotel" type="TextureButton" parent="UI/BuildingContainer/HBoxContainer"]
+margin_left = 232.0
+margin_right = 282.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+texture_normal = ExtResource( 10 )
+expand = true
