@@ -2,7 +2,8 @@ extends Node
 
 const MAX_STEPS: int = 50
 
-var coins: int = 500 setget _set_coins;
+var coins: int = 500 setget _set_coins
+var income: int = 0 setget _set_income
 var current_step: int = 0
 
 signal update_stats()
@@ -24,6 +25,10 @@ func next_move():
 
 func _set_coins(new_value):
 	coins = new_value
+	update_stats()
+
+func _set_income(new_value):
+	income = new_value
 	update_stats()
 
 func game_loop():

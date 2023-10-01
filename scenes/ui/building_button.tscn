@@ -10,3 +10,79 @@ rect_min_size = Vector2( 50, 50 )
 texture_normal = ExtResource( 1 )
 expand = true
 script = ExtResource( 2 )
+
+[node name="InfoPanel" type="PanelContainer" parent="."]
+visible = false
+margin_left = -36.0
+margin_top = -109.0
+margin_right = 78.0
+margin_bottom = -9.0
+
+[node name="VBoxContainer" type="GridContainer" parent="InfoPanel"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 107.0
+margin_bottom = 93.0
+columns = 2
+
+[node name="NameLabel" type="Label" parent="InfoPanel/VBoxContainer"]
+margin_right = 88.0
+margin_bottom = 14.0
+text = "Name"
+
+[node name="Empty" type="Label" parent="InfoPanel/VBoxContainer"]
+margin_left = 92.0
+margin_right = 100.0
+margin_bottom = 14.0
+
+[node name="CostLabel" type="Label" parent="InfoPanel/VBoxContainer"]
+margin_top = 18.0
+margin_right = 88.0
+margin_bottom = 32.0
+text = "Cost: "
+
+[node name="CostValueLabel" type="Label" parent="InfoPanel/VBoxContainer"]
+margin_left = 92.0
+margin_top = 18.0
+margin_right = 100.0
+margin_bottom = 32.0
+text = "0"
+
+[node name="IncomeLabel" type="Label" parent="InfoPanel/VBoxContainer"]
+margin_top = 36.0
+margin_right = 88.0
+margin_bottom = 50.0
+text = "Income:"
+
+[node name="IncomeValueLabel" type="Label" parent="InfoPanel/VBoxContainer"]
+margin_left = 92.0
+margin_top = 36.0
+margin_right = 100.0
+margin_bottom = 50.0
+text = "0"
+
+[node name="TechnologyLabel" type="Label" parent="InfoPanel/VBoxContainer"]
+margin_top = 54.0
+margin_right = 88.0
+margin_bottom = 68.0
+text = "Technology:"
+
+[node name="TechnologyValueLabel" type="Label" parent="InfoPanel/VBoxContainer"]
+margin_left = 92.0
+margin_top = 54.0
+margin_right = 100.0
+margin_bottom = 68.0
+text = "0"
+
+[node name="AttractivnessLabel" type="Label" parent="InfoPanel/VBoxContainer"]
+margin_top = 72.0
+margin_right = 88.0
+margin_bottom = 86.0
+text = "Attractivness:"
+
+[node name="AttractivnessValueLabel" type="Label" parent="InfoPanel/VBoxContainer"]
+margin_left = 92.0
+margin_top = 72.0
+margin_right = 100.0
+margin_bottom = 86.0
+text = "0"

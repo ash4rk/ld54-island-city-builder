@@ -14,7 +14,6 @@ width = 4.0
 depth = 4.0
 material = SubResource( 3 )
 script = ExtResource( 1 )
-terrain_tags = null
 
 [node name="Area" type="Area" parent="."]
 

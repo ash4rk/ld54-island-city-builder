@@ -6,7 +6,7 @@ enum State { NORMAL, ACTIVE, RESTRICTED, CONSTRUCTED}
 
 onready var buildings_node = $"../../"
 
-var want_to_build = null
+var want_to_build_info = null
 var cost_value = 0
 var currentState: int = State.NORMAL
 
@@ -19,7 +19,7 @@ func _on_area_mouse_entered():
 	if currentState == State.CONSTRUCTED:
 		return
 
-	if want_to_build == "_":
+	if want_to_build_info.build_name == "_":
 		change_state(State.RESTRICTED)
 	else:
 		change_state(State.ACTIVE)
@@ -53,7 +53,7 @@ func _on_Area_input_event(camera, event, position, normal, shape_idx):
 		return
 		
 	if (event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT) and Global.coins>= cost_value:
-		match want_to_build:
+		match want_to_build_info.build_name:
 			"Docks":
 				_create_building(preload("res://scenes/docks.tscn").instance())
 			"Bungalow":
@@ -75,6 +75,7 @@ func _on_Area_input_event(camera, event, position, normal, shape_idx):
 		change_state(State.CONSTRUCTED)
 		emit_signal("building_created")
 		Global.coins -= cost_value
+		Global.income += want_to_build_info.income
 		Global.next_move()
 
 func update_visibility(building_info):
@@ -82,7 +83,7 @@ func update_visibility(building_info):
 		return
 
 	cost_value = building_info.cost_coins
-	want_to_build = building_info.build_name
+	want_to_build_info = building_info
 	self.visible = self.terrain_tags == building_info.required_terrain
 
 func _create_building(build_instance):
