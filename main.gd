@@ -39,3 +39,6 @@ func _on_cancel_build_button_pressed():
 	currentState = State.NORMAL
 	for placeholders in build_placeholders.get_children():
 		placeholders.update_visibility("_")
+
+	for button in build_buttons:
+		button.pressed = false

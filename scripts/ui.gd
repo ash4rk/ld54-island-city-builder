@@ -17,11 +17,8 @@ func _ready():
 func _update_stats_event():
 	for button in buttons:
 		# TODO: Change to enable/disable
-		if button.cost > Global.coins:
-			button.modulate = Color.red
-		else:
-			button.modulate = Color.white
-	
+		button.disabled = button.cost > Global.coins
+
 	_update_coins_value()
 	_update_pb_values()
 
