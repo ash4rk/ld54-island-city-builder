@@ -1,4 +1,4 @@
-extends CSGBox
+extends Spatial
 
 signal building_created()
 export(int, FLAGS, "Coastal", "Mountains", "Ground") var terrain_tags = 0
@@ -38,15 +38,15 @@ func _update_mesh_color():
 	var color
 	match currentState:
 		State.NORMAL:
-			color = Color(1.0, 1.0, 1.0, 0.4)
+			color = Color(1.0, 1.0, 1.0, 0.0)
 		State.ACTIVE:
 			color = Color(0.0, 1.0, 0.0, 0.4)
 		State.RESTRICTED:
 			color = Color(1.0, 0.0, 0.0, 0.4)
 		State.CONSTRUCTED:
 			color = Color(1.0, 0.0, 0.0, 0.4)
-	
-	self.material.albedo_color = color
+	$OnHoverBox.material.albedo_color = color
+#	self.material.albedo_color = color
 
 func _on_Area_input_event(camera, event, position, normal, shape_idx):
 	if currentState != State.ACTIVE:

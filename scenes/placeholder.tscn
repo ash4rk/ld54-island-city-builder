@@ -1,23 +1,39 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/placeholder.gd" type="Script" id=1]
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=5]
 resource_local_to_scene = true
-albedo_color = Color( 1, 1, 1, 0.439216 )
+flags_transparent = true
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 2, 1, 2 )
 
-[node name="Placeholder" type="CSGBox"]
-width = 4.0
-depth = 4.0
-material = SubResource( 3 )
+[sub_resource type="SpatialMaterial" id=4]
+resource_local_to_scene = true
+albedo_color = Color( 0.0117647, 0.4, 0.976471, 1 )
+
+[node name="Placeholder" type="Spatial"]
 script = ExtResource( 1 )
 
+[node name="OnHoverBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00668, 0 )
+width = 4.0
+depth = 4.0
+material = SubResource( 5 )
+
 [node name="Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01085, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 shape = SubResource( 2 )
+
+[node name="PlaceholderPoint" type="CSGTorus" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.215738, 0 )
+material_override = SubResource( 4 )
+inner_radius = 0.577
+outer_radius = 0.992
+sides = 12
+ring_sides = 12
 
 [connection signal="input_event" from="Area" to="." method="_on_Area_input_event"]
