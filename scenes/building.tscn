@@ -19,11 +19,9 @@ material = SubResource( 1 )
 [node name="Building" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="IncomeTimer" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
-
 [node name="IncomeParticle" type="CPUParticles" parent="."]
+emitting = false
 amount = 1
+one_shot = true
 mesh = SubResource( 2 )
 gravity = Vector3( 0, 20, 0 )

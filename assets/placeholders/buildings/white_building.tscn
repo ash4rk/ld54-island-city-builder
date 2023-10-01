@@ -2,5 +2,5 @@
 
 [sub_resource type="SpatialMaterial" id=1]
 
-[node name="QuarryMesh" type="CSGCylinder"]
+[node name="WhiteBuildingMesh" type="CSGCylinder"]
 material = SubResource( 1 )

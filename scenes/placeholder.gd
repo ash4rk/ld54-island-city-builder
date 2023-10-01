@@ -1,7 +1,7 @@
 extends CSGBox
 
 signal building_created()
-export(int, FLAGS, "Coastal", "OnTheRocks", "OnTheSand", "Forest") var terrain_tags = 0
+export(int, FLAGS, "Coastal", "Mountains", "Ground") var terrain_tags = 0
 enum State { NORMAL, ACTIVE, RESTRICTED, CONSTRUCTED}
 
 onready var buildings_node = $"../../"
@@ -54,12 +54,22 @@ func _on_Area_input_event(camera, event, position, normal, shape_idx):
 		
 	if (event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT) and Global.coins>= cost_value:
 		match want_to_build:
-			"Sawmill":
-				_create_building(preload("res://scenes/sawmill.tscn").instance())
-			"Quarry":
-				_create_building(preload("res://scenes/quarry.tscn").instance())
-			"Shipyard":
-				_create_building(preload("res://scenes/shipyard.tscn").instance())
+			"Docks":
+				_create_building(preload("res://scenes/docks.tscn").instance())
+			"Bungalow":
+				_create_building(preload("res://scenes/bungalow.tscn").instance())
+			"Hotel":
+				_create_building(preload("res://scenes/hotel.tscn").instance())
+			"Factory":
+				_create_building(preload("res://scenes/factory.tscn").instance())
+			"CatAttraction":
+				_create_building(preload("res://scenes/cat_attraction.tscn").instance())
+			"Spaceport":
+				_create_building(preload("res://scenes/spaceport.tscn").instance())
+			"Meteo":
+				_create_building(preload("res://scenes/meteo.tscn").instance())
+			"Winery":
+				_create_building(preload("res://scenes/winery.tscn").instance())
 			"_":
 				pass
 		change_state(State.CONSTRUCTED)

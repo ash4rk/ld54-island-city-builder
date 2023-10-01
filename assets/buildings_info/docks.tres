@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://assets/buildings_info/building_info_resource.gd" type="Script" id=1]
+[ext_resource path="res://assets/buildings/Docks.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/placeholders/fish.png" type="Texture" id=3]
+
+[resource]
+script = ExtResource( 1 )
+build_name = "Docks"
+cost_coins = 30
+income = 8
+technologies = 0
+attractiveness = -2
+required_terrain = 1
+mesh = ExtResource( 2 )
+particle_image = ExtResource( 3 )

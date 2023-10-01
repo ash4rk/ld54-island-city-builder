@@ -1,11 +1,11 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scenes/placeholder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=2]
 [ext_resource path="res://assets/main_theme.tres" type="Theme" id=3]
-[ext_resource path="res://assets/buildings_info/sawmill.tres" type="Resource" id=4]
+[ext_resource path="res://assets/buildings_info/bungalow.tres" type="Resource" id=4]
 [ext_resource path="res://assets/placeholders/coin.png" type="Texture" id=5]
-[ext_resource path="res://assets/buildings_info/quarry.tres" type="Resource" id=6]
+[ext_resource path="res://assets/buildings_info/docks.tres" type="Resource" id=6]
 [ext_resource path="res://scenes/ui/building_button.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/placeholders/bank.png" type="Texture" id=8]
 [ext_resource path="res://assets/placeholders/fishrod.png" type="Texture" id=9]
@@ -19,6 +19,12 @@
 [ext_resource path="res://assets/buildings/Bungalo.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/buildings/Meteo.tscn" type="PackedScene" id=18]
 [ext_resource path="res://assets/buildings/Factory.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/buildings_info/spaceport.tres" type="Resource" id=20]
+[ext_resource path="res://assets/buildings_info/cat_attraction.tres" type="Resource" id=21]
+[ext_resource path="res://assets/buildings_info/factory.tres" type="Resource" id=22]
+[ext_resource path="res://assets/buildings_info/winery.tres" type="Resource" id=23]
+[ext_resource path="res://assets/buildings_info/hotel.tres" type="Resource" id=24]
+[ext_resource path="res://assets/buildings_info/meteo.tres" type="Resource" id=25]
 
 [sub_resource type="SpatialMaterial" id=4]
 resource_local_to_scene = true
@@ -88,34 +94,34 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5219, 4.39759, 27.2523 )
 [node name="Props" type="Spatial" parent="World"]
 
 [node name="Buildings" type="Spatial" parent="World"]
-transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, -15.0138, 2.12112, 16.194 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0138, 2.12112, 16.194 )
 
 [node name="Placeholders" type="Spatial" parent="World/Buildings"]
 
 [node name="Placeholder" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.54602, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6824, 0, 0 )
 material = SubResource( 4 )
-terrain_tags = 8
+terrain_tags = 1
 
 [node name="Placeholder2" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.38419e-07, -2.9113 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.63307, -2.38419e-07, -8.17518 )
 material = SubResource( 5 )
-terrain_tags = 2
+terrain_tags = 1
 
 [node name="Placeholder3" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38419e-07, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.57608, 2.38419e-07, -9.02251 )
 material = SubResource( 6 )
 terrain_tags = 2
 
 [node name="Placeholder4" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.43717 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.95565, 0, 3.62015 )
 material = SubResource( 7 )
-terrain_tags = 4
+terrain_tags = 2
 
 [node name="Placeholder5" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59697, 4.76837e-07, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50617, 4.76837e-07, 0.96162 )
 material = SubResource( 8 )
-terrain_tags = 8
+terrain_tags = 4
 
 [node name="Sea" type="CSGMesh" parent="World"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.48114, -0.789192, -4.17184 )
@@ -218,29 +224,47 @@ margin_right = 289.0
 margin_bottom = 57.0
 custom_constants/separation = 8
 
-[node name="Sawmill" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
-building_info = ExtResource( 4 )
+[node name="Docks" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
+building_info = ExtResource( 6 )
 
-[node name="Quarry" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Bungalo" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 58.0
 margin_right = 108.0
 texture_normal = ExtResource( 11 )
-building_info = ExtResource( 6 )
-
-[node name="Shipyard" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
-margin_left = 116.0
-margin_right = 166.0
-texture_normal = ExtResource( 9 )
-building_info = ExtResource( 4 )
-
-[node name="Bank" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
-margin_left = 174.0
-margin_right = 224.0
-texture_normal = ExtResource( 8 )
 building_info = ExtResource( 4 )
 
 [node name="Hotel" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 116.0
+margin_right = 166.0
+texture_normal = ExtResource( 9 )
+building_info = ExtResource( 24 )
+
+[node name="Factory" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 174.0
+margin_right = 224.0
+texture_normal = ExtResource( 8 )
+building_info = ExtResource( 22 )
+
+[node name="CatAttraction" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 232.0
 margin_right = 282.0
 texture_normal = ExtResource( 10 )
-building_info = ExtResource( 4 )
+building_info = ExtResource( 21 )
+
+[node name="Spaceport" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 232.0
+margin_right = 282.0
+texture_normal = ExtResource( 10 )
+building_info = ExtResource( 20 )
+
+[node name="Meteo" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 232.0
+margin_right = 282.0
+texture_normal = ExtResource( 10 )
+building_info = ExtResource( 25 )
+
+[node name="Winery" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
+margin_left = 232.0
+margin_right = 282.0
+texture_normal = ExtResource( 10 )
+building_info = ExtResource( 23 )
