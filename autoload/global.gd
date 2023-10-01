@@ -20,6 +20,7 @@ func update_stats():
 
 func next_move():
 	print_debug("next_move_event")
+	self.coins += income
 	current_step += 1
 	emit_signal("next_move")
 
