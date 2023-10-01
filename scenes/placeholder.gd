@@ -76,6 +76,8 @@ func _on_Area_input_event(camera, event, position, normal, shape_idx):
 		emit_signal("building_created")
 		Global.coins -= cost_value
 		Global.income += want_to_build_info.income
+		Global.technologies += want_to_build_info.technologies
+		Global.attractiveness += want_to_build_info.attractiveness
 		Global.next_move()
 
 func update_visibility(building_info):

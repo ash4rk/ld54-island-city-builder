@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/building.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/placeholders/log.png" type="Texture" id=2]
+[ext_resource path="res://assets/placeholders/rock.png" type="Texture" id=2]
 [ext_resource path="res://assets/buildings_info/winery.tres" type="Resource" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
