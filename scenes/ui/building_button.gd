@@ -1,12 +1,9 @@
 extends TextureButton
 
-export(PackedScene) var building
+export(Resource) var building_info
 
 var cost: int = 0
 
 func _ready():
-	cost = _calculate_building_cost()
+	cost = building_info.cost_coins
 	
-func _calculate_building_cost() -> int:
-	var cost_idx = building._bundled.names.find("cost_coins")
-	return building._bundled.variants[cost_idx]

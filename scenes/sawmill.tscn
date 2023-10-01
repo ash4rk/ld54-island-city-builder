@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/building.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/placeholders/log.png" type="Texture" id=2]
-[ext_resource path="res://assets/placeholders/buildings/sawmill_mesh.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/buildings_info/sawmill.tres" type="Resource" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
 resource_local_to_scene = true
@@ -18,11 +18,7 @@ resource_local_to_scene = true
 material = SubResource( 1 )
 
 [node name="Sawmill" instance=ExtResource( 1 )]
-build_name = "Sawmill"
-cost_coins = 35
-required_terrain = 8
-mesh = ExtResource( 3 )
-particle_image = ExtResource( 2 )
+building_info = ExtResource( 3 )
 
 [node name="IncomeParticle" parent="." index="1"]
 mesh = SubResource( 2 )

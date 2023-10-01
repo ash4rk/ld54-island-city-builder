@@ -52,7 +52,7 @@ func _on_Area_input_event(camera, event, position, normal, shape_idx):
 	if currentState != State.ACTIVE:
 		return
 		
-	if (event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT):
+	if (event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT) and Global.coins>= cost_value:
 		match want_to_build:
 			"Sawmill":
 				_create_building(preload("res://scenes/sawmill.tscn").instance())
@@ -67,20 +67,14 @@ func _on_Area_input_event(camera, event, position, normal, shape_idx):
 		Global.coins -= cost_value
 		Global.next_move()
 
-func update_visibility(building):
-	if building is String:
+func update_visibility(building_info):
+	if building_info is String:
 		return
 
-	var required_terrain_idx = building._bundled.names.find("required_terrain")
-	var building_name_idx = building._bundled.names.find("build_name")
-	var cost_idx = building._bundled.names.find("cost_coins")
-	cost_value = building._bundled.variants[cost_idx]
-	var required_terrain = building._bundled.variants[required_terrain_idx]
-	var build_name = building._bundled.variants[building_name_idx]
-	self.visible = self.terrain_tags == required_terrain
-	want_to_build = build_name
+	cost_value = building_info.cost_coins
+	want_to_build = building_info.build_name
+	self.visible = self.terrain_tags == building_info.required_terrain
 
 func _create_building(build_instance):
 	buildings_node.add_child(build_instance)
 	build_instance.transform = self.transform
-	

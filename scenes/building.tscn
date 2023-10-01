@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/building.gd" type="Script" id=1]
-[ext_resource path="res://assets/placeholders/buildings/building_mesh.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/placeholders/fish.png" type="Texture" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
@@ -19,7 +18,6 @@ material = SubResource( 1 )
 
 [node name="Building" type="Spatial"]
 script = ExtResource( 1 )
-mesh = ExtResource( 2 )
 
 [node name="IncomeTimer" type="Timer" parent="."]
 wait_time = 3.0
