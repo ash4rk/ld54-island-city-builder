@@ -2,7 +2,7 @@ extends Node
 
 onready var build_buttons = $UI/BuildingContainer/BuildingButtons/HBoxContainer.get_children()
 onready var cancel_build_button = $UI/BuildingContainer/CancelBuildButton
-onready var build_placeholders = $World/Placeholders
+onready var build_placeholders = $World/Buildings/Placeholders
 
 enum State { NORMAL, BUILDING }
 

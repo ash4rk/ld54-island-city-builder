@@ -2,7 +2,7 @@ extends Node
 
 const MAX_STEPS: int = 50
 
-var coins: int = 50 setget _set_coins;
+var coins: int = 500 setget _set_coins;
 var current_step: int = 0
 
 signal update_stats()

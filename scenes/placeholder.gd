@@ -4,7 +4,7 @@ signal building_created()
 export(int, FLAGS, "Coastal", "OnTheRocks", "OnTheSand", "Forest") var terrain_tags = 0
 enum State { NORMAL, ACTIVE, RESTRICTED, CONSTRUCTED}
 
-onready var buildings_node = $"../../Buildings"
+onready var buildings_node = $"../../"
 
 var want_to_build = null
 var cost_value = 0

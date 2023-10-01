@@ -12,10 +12,8 @@
 [ext_resource path="res://assets/placeholders/hotel.png" type="Texture" id=10]
 [ext_resource path="res://assets/placeholders/pickaxe.png" type="Texture" id=11]
 [ext_resource path="res://main.gd" type="Script" id=12]
+[ext_resource path="res://assets/island/island.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scripts/ui.gd" type="Script" id=16]
-
-[sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0.254902, 0.611765, 0.184314, 1 )
 
 [sub_resource type="SpatialMaterial" id=4]
 resource_local_to_scene = true
@@ -43,7 +41,7 @@ flags_transparent = true
 albedo_color = Color( 1, 1, 1, 0.439216 )
 
 [sub_resource type="QuadMesh" id=2]
-size = Vector2( 500, 500 )
+size = Vector2( 800, 800 )
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.0235294, 0.360784, 1, 1 )
@@ -57,44 +55,44 @@ script = ExtResource( 12 )
 transform = Transform( 0.866025, 0.25, -0.433013, 0, 0.866025, 0.5, 0.5, -0.433013, 0.75, 0, 3, 5 )
 
 [node name="Camera" type="Camera" parent="World"]
-transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5, 1 )
+transform = Transform( 0.986788, 0.118711, -0.110259, 0, 0.680542, 0.732709, 0.162017, -0.723029, 0.67155, -17.871, 39.043, 46.756 )
 current = true
 fov = 50.0
 
-[node name="Island" type="CSGCylinder" parent="World"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.987451, -6.29359 )
-material_override = SubResource( 1 )
-radius = 4.901
+[node name="Island" parent="World" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.978757, 0 )
 
-[node name="Placeholders" type="Spatial" parent="World"]
-visible = false
+[node name="Props" type="Spatial" parent="World"]
 
-[node name="Placeholder" parent="World/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.43563, 0, -4.24142 )
+[node name="Buildings" type="Spatial" parent="World"]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, -15.0138, 2.12112, 16.194 )
+
+[node name="Placeholders" type="Spatial" parent="World/Buildings"]
+
+[node name="Placeholder" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.54602, 0, 0 )
 material = SubResource( 4 )
 terrain_tags = 8
 
-[node name="Placeholder2" parent="World/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.18323, -2.38419e-07, -7.9028 )
+[node name="Placeholder2" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.38419e-07, -2.9113 )
 material = SubResource( 5 )
 terrain_tags = 2
 
-[node name="Placeholder3" parent="World/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.791966, 2.38419e-07, -8.85548 )
+[node name="Placeholder3" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38419e-07, 0 )
 material = SubResource( 6 )
 terrain_tags = 2
 
-[node name="Placeholder4" parent="World/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.89733, 0, -5.97198 )
+[node name="Placeholder4" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.43717 )
 material = SubResource( 7 )
 terrain_tags = 4
 
-[node name="Placeholder5" parent="World/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.752531, 4.76837e-07, -3.31177 )
+[node name="Placeholder5" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59697, 4.76837e-07, 0 )
 material = SubResource( 8 )
 terrain_tags = 8
-
-[node name="Buildings" type="Spatial" parent="World"]
 
 [node name="Sea" type="CSGMesh" parent="World"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.48114, -0.789192, -4.17184 )
