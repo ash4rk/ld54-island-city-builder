@@ -21,3 +21,9 @@ func _on_BackButton_pressed():
 func _input(event):
 	if event.is_action_pressed("open_options"):
 		self.visible = !self.visible
+
+func _on_RestartButton_pressed():
+	get_tree().reload_current_scene()
+
+func _on_Options_visibility_changed():
+	$Panel/VBoxContainer/RestartButton.visible = Global.current_step > 1
