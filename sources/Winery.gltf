@@ -19,18 +19,7 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"Winery",
-			"rotation":[
-				0.47463753819465637,
-				0,
-				-0.8801813721656799,
-				6.645184669196169e-08
-			],
-			"scale":[
-				0.6098828315734863,
-				0.6098828315734863,
-				0.6098828315734863
-			]
+			"name":"Winery"
 		}
 	],
 	"materials":[
@@ -91,29 +80,29 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":47081,
+			"count":47010,
 			"max":[
-				4.123388290405273,
-				2.38639497756958,
-				4.749021053314209
+				2.6578316688537598,
+				2.4598584175109863,
+				1.33773934841156
 			],
 			"min":[
-				-2.834444522857666,
-				-4.033329486846924,
-				-2.7792367935180664
+				-1.2123812437057495,
+				-1.4554213285446167,
+				-1.6547367572784424
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":47081,
+			"count":47010,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":47081,
+			"count":47010,
 			"type":"VEC2"
 		},
 		{
@@ -126,26 +115,26 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":564972,
+			"byteLength":564120,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":564972,
-			"byteOffset":564972,
+			"byteLength":564120,
+			"byteOffset":564120,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":376648,
-			"byteOffset":1129944,
+			"byteLength":376080,
+			"byteOffset":1128240,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":150036,
-			"byteOffset":1506592,
+			"byteOffset":1504320,
 			"target":34963
 		}
 	],
@@ -157,7 +146,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":1656628,
+			"byteLength":1654356,
 			"uri":"Winery.bin"
 		}
 	]

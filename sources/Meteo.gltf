@@ -19,23 +19,7 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"Meteo",
-			"rotation":[
-				0.8403587937355042,
-				0.15846015512943268,
-				-0.34142959117889404,
-				0.390017032623291
-			],
-			"scale":[
-				0.7359846830368042,
-				0.7359846830368042,
-				0.7359846830368042
-			],
-			"translation":[
-				-1.0148617029190063,
-				4.978703022003174,
-				0
-			]
+			"name":"Meteo"
 		}
 	],
 	"materials":[
@@ -65,7 +49,7 @@
 	],
 	"meshes":[
 		{
-			"name":"Meteo",
+			"name":"MeteoMesh",
 			"primitives":[
 				{
 					"attributes":{
@@ -96,29 +80,29 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":2570,
+			"count":2575,
 			"max":[
-				3.5954129695892334,
-				8.955522537231445,
-				8.761155128479004
+				1.4958873987197876,
+				5.381714820861816,
+				1.5508060455322266
 			],
 			"min":[
-				-1.5162198543548584,
-				-0.20277953147888184,
-				-0.9238795042037964
+				-1.4480526447296143,
+				-2.8087778091430664,
+				-1.393133521080017
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":2570,
+			"count":2575,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":2570,
+			"count":2575,
 			"type":"VEC2"
 		},
 		{
@@ -131,26 +115,26 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":30840,
+			"byteLength":30900,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":30840,
-			"byteOffset":30840,
+			"byteLength":30900,
+			"byteOffset":30900,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":20560,
-			"byteOffset":61680,
+			"byteLength":20600,
+			"byteOffset":61800,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":8496,
-			"byteOffset":82240,
+			"byteOffset":82400,
 			"target":34963
 		}
 	],
@@ -162,7 +146,7 @@
 	],
 	"buffers":[
 		{
-			"byteLength":90736,
+			"byteLength":90896,
 			"uri":"Meteo.bin"
 		}
 	]
