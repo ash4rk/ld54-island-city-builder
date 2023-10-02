@@ -6,7 +6,7 @@ const HIGH_LEVEL_ATTRACTIVENESS: int = 25
 const LOW_LEVEL_TECHNOLOGIES: int = 0
 const HIGH_LEVEL_TECHNOLOGIES: int = 25
 
-onready var green_panel_stylebox = preload("res://assets/green_panel_style_box.tres")
+onready var green_panel_stylebox = preload("res://assets/gray_panel_style_box.tres")
 onready var red_panel_stylebox = preload("res://assets/red_panel_style_box.tres")
 onready var restart_button = $VBoxContainer/HBoxContainer/RestartButton
 onready var overview_button = $VBoxContainer/HBoxContainer/OverviewButton
