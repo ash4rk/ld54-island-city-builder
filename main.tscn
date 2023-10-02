@@ -71,8 +71,9 @@ script = ExtResource( 12 )
 [node name="World" type="Spatial" parent="."]
 
 [node name="Sun" type="DirectionalLight" parent="World"]
-transform = Transform( -0.80242, -0.442584, 0.400303, -0.275488, 0.869765, 0.409408, -0.529367, 0.218238, -0.819843, -0.373672, 8.25951, 5.01239 )
+transform = Transform( 0.831037, -0.362618, 0.421765, 0.0359501, 0.791705, 0.609844, -0.555054, -0.491641, 0.670973, -0.392812, 8.13758, 5.02091 )
 light_color = Color( 1, 0.996078, 0.992157, 1 )
+light_energy = 0.6
 light_specular = 0.0
 shadow_enabled = true
 
@@ -86,7 +87,7 @@ script = ExtResource( 19 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26.6455, 45 )
 current = true
 fov = 50.0
-far = 250.0
+far = 1000.0
 script = ExtResource( 58 )
 
 [node name="Island" parent="World" instance=ExtResource( 13 )]
@@ -299,7 +300,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.8561, -0.529427, -53.5789 
 terrain_tags = 4
 
 [node name="Sea" type="CSGMesh" parent="World"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.481, 0, -4.172 )
+transform = Transform( 5, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, -1.481, 0, -4.172 )
 mesh = SubResource( 2 )
 material = SubResource( 3 )
 
