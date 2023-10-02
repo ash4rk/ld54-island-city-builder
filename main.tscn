@@ -64,6 +64,8 @@ size = Vector2( 800, 800 )
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.0235294, 0.360784, 1, 1 )
+metallic_specular = 0.71
+roughness = 0.18
 
 [node name="Main" type="Node"]
 script = ExtResource( 12 )
@@ -71,9 +73,9 @@ script = ExtResource( 12 )
 [node name="World" type="Spatial" parent="."]
 
 [node name="Sun" type="DirectionalLight" parent="World"]
-transform = Transform( 0.831037, -0.362618, 0.421765, 0.0359501, 0.791705, 0.609844, -0.555054, -0.491641, 0.670973, -0.392812, 8.13758, 5.02091 )
+transform = Transform( 0.936833, -0.239153, 0.255244, 0.0455902, 0.806998, 0.588791, -0.346793, -0.539963, 0.766926, -0.392812, 8.13758, 5.02091 )
 light_color = Color( 1, 0.996078, 0.992157, 1 )
-light_energy = 0.6
+light_energy = 0.8
 light_specular = 0.0
 shadow_enabled = true
 
