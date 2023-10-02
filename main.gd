@@ -9,6 +9,7 @@ enum State { NORMAL, BUILDING }
 var currentState: int = State.NORMAL
 
 func _ready():
+	Global.connect("collect_income", self, "_on_collect_income")
 	_init_build_buttons()
 	_init_placeholders()
 
@@ -42,3 +43,6 @@ func _on_cancel_build_button_pressed():
 
 	for button in build_buttons:
 		button.pressed = false
+
+func _on_collect_income():
+	$IncomePlayer.play()

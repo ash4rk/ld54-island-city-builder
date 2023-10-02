@@ -78,6 +78,7 @@ func _on_Area_input_event(camera, event, position, normal, shape_idx):
 		Global.income += want_to_build_info.income
 		Global.technologies += want_to_build_info.technologies
 		Global.attractiveness += want_to_build_info.attractiveness
+		$BuildPlayer.play()
 		Global.next_move()
 
 func update_visibility(building_info):
@@ -91,3 +92,4 @@ func update_visibility(building_info):
 func _create_building(build_instance):
 	buildings_node.add_child(build_instance)
 	build_instance.transform = self.transform
+

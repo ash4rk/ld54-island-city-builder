@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ld54_tropical_soundrack.mp3-170eb480df2f86edb8bda4a82068ae6e.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/ld54_tropical_soundrack.mp3"
+dest_files=[ "res://.import/ld54_tropical_soundrack.mp3-170eb480df2f86edb8bda4a82068ae6e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=13.0

@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/placeholder.gd" type="Script" id=1]
+[ext_resource path="res://assets/sounds/build_sound.wav" type="AudioStream" id=2]
 
 [sub_resource type="SpatialMaterial" id=5]
 resource_local_to_scene = true
@@ -52,5 +53,10 @@ ring_sides = 12
 [node name="CSGSphere" type="CSGSphere" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0329, 0 )
 material = SubResource( 1 )
+
+[node name="BuildPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = 9.0
+bus = "SFX"
 
 [connection signal="input_event" from="Area" to="." method="_on_Area_input_event"]
