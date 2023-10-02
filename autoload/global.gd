@@ -7,6 +7,11 @@ var income: int = 0 setget _set_income
 var technologies: int = 0 setget _set_technologies
 var attractiveness: int = 0 setget _set_attractiveness
 var current_step: int = 1
+var history: Dictionary = {
+	"income": [0], 
+	"technologies": [0], 
+	"attractiveness": [0]
+}
 
 signal update_stats()
 signal next_move()
@@ -23,6 +28,9 @@ func update_stats():
 
 func next_move():
 	print_debug("next_move_event")
+	history.income.append(income)
+	history.technologies.append(technologies)
+	history.attractiveness.append(attractiveness)
 	current_step += 1
 	emit_signal("next_move")
 	
