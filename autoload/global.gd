@@ -39,10 +39,6 @@ func collect_income():
 	self.coins += income
 	emit_signal("collect_income")
 
-func check_bankruptcy():
-	if income <= 0 and coins < 0:
-		game_over()
-
 func _set_coins(new_value):
 	coins = new_value
 	update_stats()
@@ -70,11 +66,13 @@ func game_loop():
 	while current_step < MAX_STEPS:
 		print("current_step ", current_step)
 		print("MAX_STEPS ", MAX_STEPS)
+		
 		update_stats()
 		
 		yield(self, "next_move")
 		collect_income()
-		check_bankruptcy()
+		if income <= 0 and coins < 0:
+			break
 	
 	game_over()
 
