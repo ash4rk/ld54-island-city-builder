@@ -4,19 +4,19 @@
 [ext_resource path="res://scenes/ui/building_button.gd" type="Script" id=2]
 
 [node name="BuildingButton" type="TextureButton"]
-margin_right = 50.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 50, 50 )
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
 texture_normal = ExtResource( 1 )
 expand = true
 script = ExtResource( 2 )
 
 [node name="InfoPanel" type="PanelContainer" parent="."]
 visible = false
-margin_left = -36.0
-margin_top = -109.0
-margin_right = 78.0
-margin_bottom = -9.0
+margin_left = -56.0
+margin_top = -168.0
+margin_right = 58.0
+margin_bottom = -68.0
 
 [node name="VBoxContainer" type="GridContainer" parent="InfoPanel"]
 margin_left = 7.0

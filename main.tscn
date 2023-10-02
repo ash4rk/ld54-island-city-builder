@@ -302,28 +302,34 @@ anchor_bottom = 1.0
 theme = ExtResource( 3 )
 script = ExtResource( 2 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
-margin_left = 429.0
-margin_top = 219.0
-margin_right = 595.0
-margin_bottom = 380.0
+[node name="PanelContainer" type="PanelContainer" parent="Menu"]
+margin_left = 397.0
+margin_top = 182.0
+margin_right = 627.0
+margin_bottom = 417.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/PanelContainer"]
+margin_left = 34.0
+margin_top = 34.0
+margin_right = 196.0
+margin_bottom = 201.0
 custom_constants/separation = 16
 
-[node name="StartButton" type="Button" parent="Menu/VBoxContainer"]
-margin_right = 166.0
-margin_bottom = 43.0
+[node name="StartButton" type="Button" parent="Menu/PanelContainer/VBoxContainer"]
+margin_right = 162.0
+margin_bottom = 45.0
 text = "Start"
 
-[node name="OptionsButton" type="Button" parent="Menu/VBoxContainer"]
-margin_top = 59.0
-margin_right = 166.0
-margin_bottom = 102.0
+[node name="OptionsButton" type="Button" parent="Menu/PanelContainer/VBoxContainer"]
+margin_top = 61.0
+margin_right = 162.0
+margin_bottom = 106.0
 text = "Options"
 
-[node name="AboutButton" type="Button" parent="Menu/VBoxContainer"]
-margin_top = 118.0
-margin_right = 166.0
-margin_bottom = 161.0
+[node name="AboutButton" type="Button" parent="Menu/PanelContainer/VBoxContainer"]
+margin_top = 122.0
+margin_right = 162.0
+margin_bottom = 167.0
 text = "About"
 
 [node name="UI" type="Control" parent="."]
@@ -344,51 +350,54 @@ margin_bottom = 88.0
 grow_horizontal = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/StatsContainer"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 183.0
-margin_bottom = 185.0
+margin_left = 34.0
+margin_top = 34.0
+margin_right = 264.0
+margin_bottom = 212.0
 alignment = 1
 
 [node name="Coins" type="HBoxContainer" parent="UI/StatsContainer/VBoxContainer"]
-margin_right = 176.0
+margin_right = 230.0
 margin_bottom = 50.0
 grow_horizontal = 0
 alignment = 1
 
 [node name="CoinsTexture" type="TextureRect" parent="UI/StatsContainer/VBoxContainer/Coins"]
-margin_left = 26.0
-margin_right = 76.0
+margin_left = 53.0
+margin_right = 103.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 50, 50 )
 texture = ExtResource( 5 )
 expand = true
 
 [node name="CoinsValue" type="Label" parent="UI/StatsContainer/VBoxContainer/Coins"]
-margin_left = 80.0
+margin_left = 107.0
 margin_top = 6.0
-margin_right = 102.0
+margin_right = 129.0
 margin_bottom = 43.0
 text = "0"
 
 [node name="IncomeValue" type="Label" parent="UI/StatsContainer/VBoxContainer/Coins"]
-margin_left = 106.0
+margin_left = 133.0
 margin_top = 6.0
-margin_right = 150.0
+margin_right = 177.0
 margin_bottom = 43.0
 grow_horizontal = 0
 text = "+0"
 
 [node name="TechnologyPB" parent="UI/StatsContainer/VBoxContainer" instance=ExtResource( 28 )]
+margin_left = 0.0
 margin_top = 54.0
-margin_right = 176.0
+margin_right = 230.0
 margin_bottom = 114.0
+rect_min_size = Vector2( 210, 60 )
 theme = ExtResource( 26 )
 value_name = "technologies"
 
 [node name="AttractivenessPB" parent="UI/StatsContainer/VBoxContainer" instance=ExtResource( 28 )]
+margin_left = 0.0
 margin_top = 118.0
-margin_right = 176.0
+margin_right = 230.0
 margin_bottom = 178.0
 theme = ExtResource( 26 )
 value_name = "attractiveness"
@@ -412,21 +421,18 @@ margin_bottom = 43.0
 text = "X"
 
 [node name="BuildingButtons" type="PanelContainer" parent="UI/BuildingContainer"]
-margin_right = 470.0
-margin_bottom = 64.0
+margin_right = 636.0
+margin_bottom = 132.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/BuildingContainer/BuildingButtons"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 463.0
-margin_bottom = 57.0
+margin_left = 34.0
+margin_top = 34.0
+margin_right = 602.0
+margin_bottom = 98.0
 theme = ExtResource( 26 )
 custom_constants/separation = 8
 
 [node name="Docks" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
-margin_right = 64.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
 toggle_mode = true
 group = ExtResource( 31 )
 texture_normal = ExtResource( 29 )
@@ -436,10 +442,8 @@ texture_disabled = ExtResource( 42 )
 building_info = ExtResource( 6 )
 
 [node name="Bungalo" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
-margin_left = 58.0
-margin_right = 122.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+margin_left = 72.0
+margin_right = 136.0
 toggle_mode = true
 group = ExtResource( 31 )
 texture_normal = ExtResource( 10 )
@@ -449,10 +453,8 @@ texture_disabled = ExtResource( 47 )
 building_info = ExtResource( 4 )
 
 [node name="Hotel" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
-margin_left = 116.0
-margin_right = 180.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+margin_left = 144.0
+margin_right = 208.0
 toggle_mode = true
 group = ExtResource( 31 )
 texture_normal = ExtResource( 33 )
@@ -462,10 +464,8 @@ texture_disabled = ExtResource( 44 )
 building_info = ExtResource( 24 )
 
 [node name="Factory" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
-margin_left = 174.0
-margin_right = 238.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+margin_left = 216.0
+margin_right = 280.0
 toggle_mode = true
 group = ExtResource( 31 )
 texture_normal = ExtResource( 41 )
@@ -475,10 +475,8 @@ texture_disabled = ExtResource( 45 )
 building_info = ExtResource( 22 )
 
 [node name="Theater" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
-margin_left = 232.0
-margin_right = 296.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+margin_left = 288.0
+margin_right = 352.0
 toggle_mode = true
 group = ExtResource( 31 )
 texture_normal = ExtResource( 34 )
@@ -488,10 +486,8 @@ texture_disabled = ExtResource( 46 )
 building_info = ExtResource( 21 )
 
 [node name="Spaceport" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
-margin_left = 290.0
-margin_right = 354.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+margin_left = 360.0
+margin_right = 424.0
 toggle_mode = true
 group = ExtResource( 31 )
 texture_normal = ExtResource( 35 )
@@ -501,10 +497,8 @@ texture_disabled = ExtResource( 43 )
 building_info = ExtResource( 20 )
 
 [node name="Meteo" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
-margin_left = 348.0
-margin_right = 412.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+margin_left = 432.0
+margin_right = 496.0
 toggle_mode = true
 group = ExtResource( 31 )
 texture_normal = ExtResource( 36 )
@@ -514,10 +508,8 @@ texture_disabled = ExtResource( 49 )
 building_info = ExtResource( 25 )
 
 [node name="Winery" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
-margin_left = 406.0
-margin_right = 470.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
+margin_left = 504.0
+margin_right = 568.0
 toggle_mode = true
 group = ExtResource( 31 )
 texture_normal = ExtResource( 9 )
@@ -533,31 +525,31 @@ margin_right = 239.0
 margin_bottom = 71.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/MoveInfoContainer"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 209.0
-margin_bottom = 91.0
+margin_left = 34.0
+margin_top = 34.0
+margin_right = 214.0
+margin_bottom = 120.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/MoveInfoContainer/VBoxContainer"]
-margin_right = 202.0
+margin_right = 180.0
 margin_bottom = 37.0
 alignment = 1
 
 [node name="MoveLabel" type="Label" parent="UI/MoveInfoContainer/VBoxContainer/HBoxContainer"]
-margin_right = 110.0
+margin_right = 88.0
 margin_bottom = 37.0
 text = "Day:"
 
 [node name="MoveValueLabel" type="Label" parent="UI/MoveInfoContainer/VBoxContainer/HBoxContainer"]
-margin_left = 114.0
-margin_right = 202.0
+margin_left = 92.0
+margin_right = 180.0
 margin_bottom = 37.0
 text = "1/50"
 
 [node name="SkipButton" type="Button" parent="UI/MoveInfoContainer/VBoxContainer"]
 margin_top = 41.0
-margin_right = 202.0
-margin_bottom = 84.0
+margin_right = 180.0
+margin_bottom = 86.0
 text = "Skip"
 
 [node name="GameOverScreen" parent="." instance=ExtResource( 14 )]
