@@ -6,11 +6,11 @@
 
 [resource]
 script = ExtResource( 1 )
-build_name = "CatAttraction"
+build_name = "Theater"
 cost_coins = 350
 income = -6
 technologies = 0
-attractiveness = 40
+attractiveness = 25
 required_terrain = 4
 mesh = ExtResource( 2 )
 particle_image = ExtResource( 3 )

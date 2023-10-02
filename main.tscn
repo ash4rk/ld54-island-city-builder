@@ -17,7 +17,7 @@
 [ext_resource path="res://env.tres" type="Environment" id=15]
 [ext_resource path="res://scripts/ui.gd" type="Script" id=16]
 [ext_resource path="res://assets/buildings_info/spaceport.tres" type="Resource" id=20]
-[ext_resource path="res://assets/buildings_info/cat_attraction.tres" type="Resource" id=21]
+[ext_resource path="res://assets/buildings_info/theater.tres" type="Resource" id=21]
 [ext_resource path="res://assets/buildings_info/factory.tres" type="Resource" id=22]
 [ext_resource path="res://assets/buildings_info/winery.tres" type="Resource" id=23]
 [ext_resource path="res://assets/buildings_info/hotel.tres" type="Resource" id=24]
@@ -474,7 +474,7 @@ texture_hover = ExtResource( 54 )
 texture_disabled = ExtResource( 45 )
 building_info = ExtResource( 22 )
 
-[node name="CatAttraction" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
+[node name="Theater" parent="UI/BuildingContainer/BuildingButtons/HBoxContainer" instance=ExtResource( 7 )]
 margin_left = 232.0
 margin_right = 296.0
 margin_bottom = 64.0

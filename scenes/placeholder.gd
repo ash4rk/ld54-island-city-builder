@@ -62,8 +62,8 @@ func _on_Area_input_event(camera, event, position, normal, shape_idx):
 				_create_building(preload("res://scenes/hotel.tscn").instance())
 			"Factory":
 				_create_building(preload("res://scenes/factory.tscn").instance())
-			"CatAttraction":
-				_create_building(preload("res://scenes/cat_attraction.tscn").instance())
+			"Theater":
+				_create_building(preload("res://scenes/theater.tscn").instance())
 			"Spaceport":
 				_create_building(preload("res://scenes/spaceport.tscn").instance())
 			"Meteo":
