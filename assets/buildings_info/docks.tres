@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/buildings_info/building_info_resource.gd" type="Script" id=1]
 [ext_resource path="res://assets/buildings/Docks.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/placeholders/fish.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/coin.png" type="Texture" id=3]
 
 [resource]
 script = ExtResource( 1 )
