@@ -13,6 +13,7 @@ func _ready():
 	skip_button.connect("pressed", self, "_skip_button_pressed")
 	Global.connect("update_stats", self, "_update_stats_event")
 	Global.connect("next_move", self, "_next_move_event")
+	Global.connect("game_over", self, "_game_over_event")
 
 func _update_stats_event():
 	for button in buttons:
@@ -47,3 +48,6 @@ func _next_move_event():
 
 func _skip_button_pressed():
 	Global.next_move()
+
+func _game_over_event():
+	skip_button.release_focus()

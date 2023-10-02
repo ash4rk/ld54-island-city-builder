@@ -6,7 +6,7 @@ var coins: int = 500 setget _set_coins
 var income: int = 0 setget _set_income
 var technologies: int = 0 setget _set_technologies
 var attractiveness: int = 0 setget _set_attractiveness
-var current_step: int = 0
+var current_step: int = 1
 
 signal update_stats()
 signal next_move()
@@ -23,13 +23,16 @@ func update_stats():
 
 func next_move():
 	print_debug("next_move_event")
-
 	emit_signal("next_move")
 	
 func collect_income():
 	print_debug("collect_income_event")
 	self.coins += income
 	emit_signal("collect_income")
+
+func check_bankruptcy():
+	if income <= 0 and coins < 0:
+		game_over()
 
 func _set_coins(new_value):
 	coins = new_value
@@ -47,6 +50,13 @@ func _set_attractiveness(new_value):
 	attractiveness = new_value
 	update_stats()
 
+func reset():
+	current_step = 0
+	coins = 500
+	income = 0
+	attractiveness = 0
+	technologies = 0
+
 func game_loop():
 	while current_step < MAX_STEPS:
 		print("current_step ", current_step)
@@ -56,6 +66,7 @@ func game_loop():
 		yield(self, "next_move")
 		current_step += 1
 		collect_income()
+		check_bankruptcy()
 	
 	game_over()
 
