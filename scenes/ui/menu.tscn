@@ -1,0 +1,163 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/main_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/main_menu.gd" type="Script" id=2]
+[ext_resource path="res://scenes/ui/options.gd" type="Script" id=3]
+
+[node name="Menu" type="CenterContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_left = 383.0
+margin_top = 182.0
+margin_right = 641.0
+margin_bottom = 417.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+margin_left = 48.0
+margin_top = 34.0
+margin_right = 210.0
+margin_bottom = 201.0
+custom_constants/separation = 16
+
+[node name="StartButton" type="Button" parent="PanelContainer/VBoxContainer"]
+margin_right = 162.0
+margin_bottom = 45.0
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="PanelContainer/VBoxContainer"]
+margin_top = 61.0
+margin_right = 162.0
+margin_bottom = 106.0
+text = "Options"
+
+[node name="AboutButton" type="Button" parent="PanelContainer/VBoxContainer"]
+margin_top = 122.0
+margin_right = 162.0
+margin_bottom = 167.0
+text = "About"
+
+[node name="Options" type="Control" parent="."]
+visible = false
+margin_left = 512.0
+margin_top = 300.0
+margin_right = 512.0
+margin_bottom = 300.0
+script = ExtResource( 3 )
+
+[node name="Panel" type="PanelContainer" parent="Options"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -286.0
+margin_top = -146.5
+margin_right = 286.0
+margin_bottom = 146.5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options/Panel"]
+margin_left = 48.0
+margin_top = 34.0
+margin_right = 524.0
+margin_bottom = 259.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/Panel/VBoxContainer"]
+margin_right = 476.0
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Options/Panel/VBoxContainer"]
+margin_top = 4.0
+margin_right = 476.0
+margin_bottom = 176.0
+columns = 2
+
+[node name="Music" type="Label" parent="Options/Panel/VBoxContainer/GridContainer"]
+margin_top = 1.0
+margin_right = 352.0
+margin_bottom = 38.0
+text = "Music: "
+align = 2
+
+[node name="MusicSlider" type="HSlider" parent="Options/Panel/VBoxContainer/GridContainer"]
+margin_left = 356.0
+margin_right = 476.0
+margin_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 120, 40 )
+min_value = -80.0
+max_value = 5.0
+value = -16.0
+
+[node name="SFX" type="Label" parent="Options/Panel/VBoxContainer/GridContainer"]
+margin_top = 45.0
+margin_right = 352.0
+margin_bottom = 82.0
+text = "SFX: "
+align = 2
+
+[node name="SFXSlider" type="HSlider" parent="Options/Panel/VBoxContainer/GridContainer"]
+margin_left = 356.0
+margin_top = 44.0
+margin_right = 476.0
+margin_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 120, 40 )
+min_value = -80.0
+max_value = 5.0
+value = -3.0
+
+[node name="OrbitSpeed" type="Label" parent="Options/Panel/VBoxContainer/GridContainer"]
+margin_top = 89.0
+margin_right = 352.0
+margin_bottom = 126.0
+text = "Orbit Speed: "
+align = 2
+
+[node name="OrbitSpeedSlider" type="HSlider" parent="Options/Panel/VBoxContainer/GridContainer"]
+margin_left = 356.0
+margin_top = 88.0
+margin_right = 476.0
+margin_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 120, 40 )
+min_value = 0.1
+max_value = 3.0
+step = 0.1
+value = 1.0
+
+[node name="MovementSpeed" type="Label" parent="Options/Panel/VBoxContainer/GridContainer"]
+margin_top = 133.0
+margin_right = 352.0
+margin_bottom = 170.0
+text = "Movement Speed: "
+align = 2
+
+[node name="MovementSpeedSlider" type="HSlider" parent="Options/Panel/VBoxContainer/GridContainer"]
+margin_left = 356.0
+margin_top = 132.0
+margin_right = 476.0
+margin_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 120, 40 )
+min_value = 5.0
+max_value = 50.0
+value = 20.0
+
+[node name="BackButton" type="Button" parent="Options/Panel/VBoxContainer"]
+margin_top = 180.0
+margin_right = 476.0
+margin_bottom = 225.0
+text = "Back"
+
+[connection signal="value_changed" from="Options/Panel/VBoxContainer/GridContainer/MusicSlider" to="Options" method="_on_MusicSlider_value_changed"]
+[connection signal="value_changed" from="Options/Panel/VBoxContainer/GridContainer/SFXSlider" to="Options" method="_on_SFXSlider_value_changed"]
+[connection signal="value_changed" from="Options/Panel/VBoxContainer/GridContainer/OrbitSpeedSlider" to="Options" method="_on_OrbitSpeedSlider_value_changed"]
+[connection signal="value_changed" from="Options/Panel/VBoxContainer/GridContainer/MovementSpeedSlider" to="Options" method="_on_MovementSpeedSlider_value_changed"]
+[connection signal="pressed" from="Options/Panel/VBoxContainer/BackButton" to="Options" method="_on_BackButton_pressed"]
