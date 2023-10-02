@@ -2,8 +2,9 @@ extends Camera
 
 onready var Pivot = $"/root/Main/World/Pivot"
 
-const PAN_SPEED = 15.0
-const ORBIT_SPEED = 1
+var PAN_SPEED = 15.0
+var ORBIT_SPEED = 1
+
 const ZOOM_SPEED = 3.0
 const MAX_ZOOM = 55.0
 const MIN_ZOOM = 17.0
@@ -36,7 +37,6 @@ func _process(delta):
 #			print(mouse_delta)
 			var pan_delta:Vector2 = (mouse_delta) * PAN_SPEED * delta
 #			print(pan_delta)
-			print(pan_delta)
 			
 			Pivot.movement(pan_delta, X_BOUNDARY, Z_BOUNDARY)
 			self.look_at(Pivot.global_transform.origin,Vector3(0,1,0))

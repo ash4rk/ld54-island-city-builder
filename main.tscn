@@ -304,6 +304,9 @@ material = SubResource( 3 )
 
 [node name="Menu" parent="." instance=ExtResource( 2 )]
 
+[node name="Options" parent="Menu" index="1"]
+CAMERA_PATH = NodePath("../../World/Pivot/Camera")
+
 [node name="UI" type="Control" parent="."]
 visible = false
 anchor_right = 1.0
@@ -536,3 +539,5 @@ bus = "Music"
 stream = ExtResource( 18 )
 volume_db = 9.0
 bus = "SFX"
+
+[editable path="Menu"]
