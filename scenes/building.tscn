@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/building.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/coin.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/dust.png" type="Texture" id=3]
 
 [sub_resource type="SpatialMaterial" id=3]
 flags_transparent = true
@@ -11,6 +12,21 @@ albedo_texture = ExtResource( 2 )
 [sub_resource type="QuadMesh" id=2]
 resource_local_to_scene = true
 material = SubResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=7]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="QuadMesh" id=5]
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.0689655, 0.982955 ), 0.0, 0.0, 0, 0, Vector2( 0.265517, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0011363 ), 0.0, 0.0, 0, 0 ]
 
 [node name="Building" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.06543, 0 )
@@ -23,3 +39,25 @@ lifetime = 2.0
 one_shot = true
 mesh = SubResource( 2 )
 gravity = Vector3( 0, 20, 0 )
+
+[node name="OnBuiltParticles" type="CPUParticles" parent="."]
+material_override = SubResource( 7 )
+emitting = false
+amount = 12
+lifetime = 2.4
+one_shot = true
+explosiveness = 0.95
+mesh = SubResource( 5 )
+emission_shape = 1
+emission_sphere_radius = 5.0
+direction = Vector3( 30, 20, 0 )
+spread = 165.0
+gravity = Vector3( 0, 10, 0 )
+initial_velocity = 4.0
+angular_velocity = 200.0
+angular_velocity_random = 0.5
+tangential_accel = 4.0
+tangential_accel_random = 0.5
+angle_random = 0.8
+scale_amount = 5.0
+scale_amount_curve = SubResource( 6 )

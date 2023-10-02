@@ -14,6 +14,7 @@ func _ready():
 		income_particle.mesh.material.flags_transparent = true
 		income_particle.mesh.material.flags_unshaded = true
 		income_particle.mesh.size = Vector2(3.0, 3.0)
+	$OnBuiltParticles.emitting = true
 	
 func _emit_income():
 	if income_particle.emitting:
