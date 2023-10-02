@@ -3,6 +3,10 @@
 		"generator":"Khronos glTF Blender I/O v3.6.27",
 		"version":"2.0"
 	},
+	"extensionsUsed":[
+		"KHR_materials_specular",
+		"KHR_materials_ior"
+	],
 	"scene":0,
 	"scenes":[
 		{
@@ -15,17 +19,41 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"Factory",
+			"name":"FactoryPlatform",
 			"scale":[
-				0.5279361009597778,
-				2.0268137454986572,
-				0.5279361009597778
+				0.5708619952201843,
+				0.5708619952201843,
+				0.5708619952201843
 			]
+		}
+	],
+	"materials":[
+		{
+			"doubleSided":true,
+			"extensions":{
+				"KHR_materials_specular":{
+					"specularColorFactor":[
+						0,
+						0,
+						0
+					]
+				},
+				"KHR_materials_ior":{
+					"ior":1.4500000476837158
+				}
+			},
+			"name":"Factory",
+			"pbrMetallicRoughness":{
+				"baseColorTexture":{
+					"index":0
+				},
+				"metallicFactor":0
+			}
 		}
 	],
 	"meshes":[
 		{
-			"name":"Cylinder.019",
+			"name":"Cube.042",
 			"primitives":[
 				{
 					"attributes":{
@@ -33,76 +61,96 @@
 						"NORMAL":1,
 						"TEXCOORD_0":2
 					},
-					"indices":3
+					"indices":3,
+					"material":0
 				}
 			]
+		}
+	],
+	"textures":[
+		{
+			"sampler":0,
+			"source":0
+		}
+	],
+	"images":[
+		{
+			"mimeType":"image/png",
+			"name":"factory-dif",
+			"uri":"factory-dif.png"
 		}
 	],
 	"accessors":[
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":1534,
+			"count":1652,
 			"max":[
-				11.32165813446045,
-				1.942393183708191,
-				6.6847429275512695
+				5.879634380340576,
+				4.757632255554199,
+				3.54687237739563
 			],
 			"min":[
-				-11.368436813354492,
-				-1.0725568532943726,
-				-6.752012252807617
+				-6.09928560256958,
+				-2.584305763244629,
+				-3.5468759536743164
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":1534,
+			"count":1652,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":1534,
+			"count":1652,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":6390,
+			"count":6678,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":18408,
+			"byteLength":19824,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":18408,
-			"byteOffset":18408,
+			"byteLength":19824,
+			"byteOffset":19824,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":12272,
-			"byteOffset":36816,
+			"byteLength":13216,
+			"byteOffset":39648,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":12780,
-			"byteOffset":49088,
+			"byteLength":13356,
+			"byteOffset":52864,
 			"target":34963
+		}
+	],
+	"samplers":[
+		{
+			"magFilter":9729,
+			"minFilter":9987
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":61868,
+			"byteLength":66220,
 			"uri":"Factory.bin"
 		}
 	]
