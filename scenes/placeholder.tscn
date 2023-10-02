@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/placeholder.gd" type="Script" id=1]
 
@@ -12,6 +12,18 @@ extents = Vector3( 2, 1, 2 )
 [sub_resource type="SpatialMaterial" id=4]
 resource_local_to_scene = true
 albedo_color = Color( 0.0117647, 0.4, 0.976471, 1 )
+
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0.306748, 0.717791, 1 )
+colors = PoolColorArray( 1, 0, 0.987305, 1, 1, 0, 0, 1, 0.97168, 1, 0, 1 )
+
+[sub_resource type="GradientTexture2D" id=7]
+gradient = SubResource( 6 )
+fill_from = Vector2( 0.5, 1 )
+fill_to = Vector2( 0.5, 0 )
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = SubResource( 7 )
 
 [node name="Placeholder" type="Spatial"]
 script = ExtResource( 1 )
@@ -30,10 +42,15 @@ shape = SubResource( 2 )
 
 [node name="PlaceholderPoint" type="CSGTorus" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.72589, 0 )
+visible = false
 material_override = SubResource( 4 )
 inner_radius = 0.577
 outer_radius = 0.992
 sides = 12
 ring_sides = 12
+
+[node name="CSGSphere" type="CSGSphere" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0329, 0 )
+material = SubResource( 1 )
 
 [connection signal="input_event" from="Area" to="." method="_on_Area_input_event"]
