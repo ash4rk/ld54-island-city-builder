@@ -1,16 +1,20 @@
 extends Control
 
-const REQUERED_BUDGET: int = 500
+const REQUERED_BUDGET: int = 1300
 const LOW_LEVEL_ATTRACTIVENESS: int = 0
-const HIGH_LEVEL_ATTRACTIVENESS: int = 25
+const HIGH_LEVEL_ATTRACTIVENESS: int = 130
 const LOW_LEVEL_TECHNOLOGIES: int = 0
-const HIGH_LEVEL_TECHNOLOGIES: int = 25
+const HIGH_LEVEL_TECHNOLOGIES: int = 130
 
-onready var green_panel_stylebox = preload("res://assets/gray_panel_style_box.tres")
+onready var green_panel_stylebox = preload("res://assets/green_panel_style_box.tres")
 onready var red_panel_stylebox = preload("res://assets/red_panel_style_box.tres")
 onready var restart_button = $VBoxContainer/HBoxContainer/RestartButton
 onready var overview_button = $VBoxContainer/HBoxContainer/OverviewButton
 onready var line_chart_button = $VBoxContainer/HBoxContainer/LineChartButton
+
+onready var budget_mark = $VBoxContainer/GameOverMessage/VBoxContainer/Budget/BudgetMark
+onready var techonologies_mark = $VBoxContainer/GameOverMessage/VBoxContainer/Technologies/TechnologiesMark
+onready var attractiveness_mark = $VBoxContainer/GameOverMessage/VBoxContainer/Attractiveness/AttractivenessMark
 
 func _ready():
 	Global.connect("game_over", self, "_game_over_event")
@@ -47,33 +51,43 @@ func _counting_the_results():
 		$VBoxContainer/GameOverMessage/VBoxContainer/CongratLabel.text = "Congratulations!"
 		$VBoxContainer/GameOverMessage/VBoxContainer/MessageLabel.show()
 		$VBoxContainer/GameOverMessage/VBoxContainer/MessageLabel.text = "You've made some accomplishments!\n"
-		$VBoxContainer/GameOverMessage/VBoxContainer/MessageLabel.text += _generate_game_over_text()
-		
+		_generate_game_over_text()
 	$VBoxContainer/GameOverMessage.show()
 	
 func _generate_game_over_text():
 	var game_over_text = "\n"
+	$VBoxContainer/GameOverMessage/VBoxContainer/Budget/BudgetValue.text = str(Global.coins)
+	$VBoxContainer/GameOverMessage/VBoxContainer/Technologies/TechnologiesValue.text = str(Global.technologies)
+	$VBoxContainer/GameOverMessage/VBoxContainer/Attractiveness/AttractivenessValue.text = str(Global.attractiveness)
 	
 	# Budget check
 	if Global.coins > REQUERED_BUDGET:
-		game_over_text += "GOOD BUDGET!\n"
+		budget_mark.text = "- AWESOME!"
+		budget_mark.modulate = Color.green
 	else:
-		game_over_text += "BAD BUDGET!\n"
+		budget_mark.text = "- BAD!"
+		budget_mark.modulate = Color.red
 
 	# Technologies check
-	if Global.technologies < LOW_LEVEL_TECHNOLOGIES:
-		game_over_text += "BAD TECHNOLOGIES!\n"
+	if Global.technologies <= LOW_LEVEL_TECHNOLOGIES:
+		techonologies_mark.text = "- BAD!"
+		techonologies_mark.modulate = Color.red
 	elif Global.technologies > LOW_LEVEL_TECHNOLOGIES and Global.attractiveness < HIGH_LEVEL_TECHNOLOGIES:
-		game_over_text += "MEAN TECHNOLOGIES!\n"
+		techonologies_mark.text = "- Good"
+		techonologies_mark.modulate = Color.yellow
 	else:
-		game_over_text += "GOOD TECHNOLOGIES!\n"
+		techonologies_mark.text = "- AWESOME!"
+		techonologies_mark.modulate = Color.green
 
 	# Attractiveness check
-	if Global.attractiveness < LOW_LEVEL_ATTRACTIVENESS:
-		game_over_text += "BAD ATTRACTIVENESS!"
+	if Global.attractiveness <= LOW_LEVEL_ATTRACTIVENESS:
+		attractiveness_mark.text = "- BAD!"
+		attractiveness_mark.modulate = Color.red
 	elif Global.attractiveness > LOW_LEVEL_ATTRACTIVENESS and Global.attractiveness < HIGH_LEVEL_ATTRACTIVENESS:
-		game_over_text += "MEAN ATTRACTIVENESS!"
+		attractiveness_mark.text = "- Good"
+		attractiveness_mark.modulate = Color.yellow
 	else:
-		game_over_text += "GOOD ATTRACTIVENESS!"
+		attractiveness_mark.text = "- AWESOME!"
+		attractiveness_mark.modulate = Color.green
 	
 	return game_over_text
