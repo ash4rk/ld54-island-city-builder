@@ -580,13 +580,13 @@ alignment = 1
 [node name="MoveLabel" type="Label" parent="UI/MoveInfoContainer/VBoxContainer/HBoxContainer"]
 margin_right = 110.0
 margin_bottom = 37.0
-text = "Move:"
+text = "Day:"
 
 [node name="MoveValueLabel" type="Label" parent="UI/MoveInfoContainer/VBoxContainer/HBoxContainer"]
 margin_left = 114.0
 margin_right = 202.0
 margin_bottom = 37.0
-text = "0/50"
+text = "1/50"
 
 [node name="SkipButton" type="Button" parent="UI/MoveInfoContainer/VBoxContainer"]
 margin_top = 41.0

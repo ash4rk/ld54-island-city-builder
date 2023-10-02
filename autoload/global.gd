@@ -23,6 +23,7 @@ func update_stats():
 
 func next_move():
 	print_debug("next_move_event")
+	current_step += 1
 	emit_signal("next_move")
 	
 func collect_income():
@@ -51,7 +52,7 @@ func _set_attractiveness(new_value):
 	update_stats()
 
 func reset():
-	current_step = 0
+	current_step = 1
 	coins = 500
 	income = 0
 	attractiveness = 0
@@ -64,7 +65,6 @@ func game_loop():
 		update_stats()
 		
 		yield(self, "next_move")
-		current_step += 1
 		collect_income()
 		check_bankruptcy()
 	
