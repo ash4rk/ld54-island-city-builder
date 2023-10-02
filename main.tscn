@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://scenes/placeholder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://assets/images/meteo_pressed.png" type="Texture" id=11]
 [ext_resource path="res://main.gd" type="Script" id=12]
 [ext_resource path="res://assets/island/island.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/ui/game_over_screen.tscn" type="PackedScene" id=14]
 [ext_resource path="res://env.tres" type="Environment" id=15]
 [ext_resource path="res://scripts/ui.gd" type="Script" id=16]
 [ext_resource path="res://assets/buildings_info/spaceport.tres" type="Resource" id=20]
@@ -22,7 +23,6 @@
 [ext_resource path="res://assets/buildings_info/hotel.tres" type="Resource" id=24]
 [ext_resource path="res://assets/buildings_info/meteo.tres" type="Resource" id=25]
 [ext_resource path="res://assets/small_text_theme.tres" type="Theme" id=26]
-[ext_resource path="res://scripts/game_over_screen.gd" type="Script" id=27]
 [ext_resource path="res://scenes/ui/double_progress_bar.tscn" type="PackedScene" id=28]
 [ext_resource path="res://assets/images/docks_normal.png" type="Texture" id=29]
 [ext_resource path="res://assets/images/docks_pressed.png" type="Texture" id=30]
@@ -60,40 +60,6 @@ size = Vector2( 800, 800 )
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.0235294, 0.360784, 1, 1 )
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.764706, 0.0313726, 0.0313726, 1 )
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color( 0.568627, 0.0392157, 0.0392157, 1 )
-border_blend = true
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 8.0
-expand_margin_right = 8.0
-expand_margin_top = 8.0
-expand_margin_bottom = 8.0
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.372549, 0.741176, 0.12549, 1 )
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color( 0.279019, 0.558594, 0.0916443, 1 )
-border_blend = true
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 4.0
-expand_margin_right = 4.0
-expand_margin_top = 4.0
-expand_margin_bottom = 4.0
 
 [node name="Main" type="Node"]
 script = ExtResource( 12 )
@@ -594,94 +560,4 @@ margin_right = 202.0
 margin_bottom = 84.0
 text = "Skip"
 
-[node name="GameOverScreen" type="Control" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-theme = ExtResource( 3 )
-script = ExtResource( 27 )
-
-[node name="BG" type="ColorRect" parent="GameOverScreen"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.678431 )
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GameOverScreen"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -261.0
-margin_top = -82.5
-margin_right = 261.0
-margin_bottom = 82.5
-custom_constants/separation = 16
-alignment = 1
-
-[node name="GameOverLabel" type="Label" parent="GameOverScreen/VBoxContainer"]
-margin_top = 34.0
-margin_right = 522.0
-margin_bottom = 71.0
-text = "Game Over!"
-align = 1
-
-[node name="BankruptcyMessage" type="PanelContainer" parent="GameOverScreen/VBoxContainer"]
-visible = false
-margin_top = 53.0
-margin_right = 522.0
-margin_bottom = 106.0
-custom_styles/panel = SubResource( 5 )
-
-[node name="Label" type="Label" parent="GameOverScreen/VBoxContainer/BankruptcyMessage"]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 514.0
-margin_bottom = 45.0
-text = "Oh no, you're bankrupt!"
-
-[node name="NormalMessage" type="PanelContainer" parent="GameOverScreen/VBoxContainer"]
-visible = false
-margin_top = 53.0
-margin_right = 522.0
-margin_bottom = 127.0
-custom_styles/panel = SubResource( 4 )
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GameOverScreen/VBoxContainer/NormalMessage"]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 514.0
-margin_bottom = 66.0
-alignment = 1
-
-[node name="Label" type="Label" parent="GameOverScreen/VBoxContainer/NormalMessage/VBoxContainer"]
-margin_right = 506.0
-margin_bottom = 37.0
-text = "Congratulations!"
-align = 1
-
-[node name="Label2" type="Label" parent="GameOverScreen/VBoxContainer/NormalMessage/VBoxContainer"]
-margin_top = 41.0
-margin_right = 506.0
-margin_bottom = 58.0
-theme = ExtResource( 26 )
-text = "You've made some accomplishments!"
-align = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="GameOverScreen/VBoxContainer"]
-margin_top = 87.0
-margin_right = 522.0
-margin_bottom = 130.0
-custom_constants/separation = 8
-alignment = 1
-
-[node name="RestartButton" type="Button" parent="GameOverScreen/VBoxContainer/HBoxContainer"]
-margin_left = 80.0
-margin_right = 246.0
-margin_bottom = 43.0
-text = "Restart"
-
-[node name="OverviewButton" type="Button" parent="GameOverScreen/VBoxContainer/HBoxContainer"]
-margin_left = 254.0
-margin_right = 442.0
-margin_bottom = 43.0
-text = "Overview"
+[node name="GameOverScreen" parent="." instance=ExtResource( 14 )]
