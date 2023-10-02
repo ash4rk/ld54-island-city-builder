@@ -45,8 +45,8 @@ corner_radius_bottom_left = 8
 [sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 512, 512 )
-margin_left = 34.0
-margin_right = 34.0
+margin_left = 48.0
+margin_right = 48.0
 margin_top = 34.0
 margin_bottom = 34.0
 modulate_color = Color( 0.827451, 0.807843, 0.807843, 1 )
