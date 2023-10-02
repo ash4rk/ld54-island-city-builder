@@ -30,7 +30,7 @@ alignment = 1
 [node name="NegativeProgress" type="TextureProgress" parent="HBoxContainer"]
 margin_right = 110.0
 margin_bottom = 50.0
-max_value = 25.0
+max_value = 130.0
 rounded = true
 texture_under = ExtResource( 2 )
 texture_progress = ExtResource( 3 )
@@ -40,7 +40,7 @@ fill_mode = 1
 margin_left = 114.0
 margin_right = 224.0
 margin_bottom = 50.0
-max_value = 25.0
+max_value = 130.0
 rounded = true
 texture_under = ExtResource( 4 )
 texture_progress = ExtResource( 1 )

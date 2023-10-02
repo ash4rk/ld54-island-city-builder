@@ -2,7 +2,7 @@ extends Node
 
 const MAX_STEPS: int = 50
 
-var coins: int = 500 setget _set_coins
+var coins: int = 250 setget _set_coins
 var income: int = 0 setget _set_income
 var technologies: int = 0 setget _set_technologies
 var attractiveness: int = 0 setget _set_attractiveness
@@ -61,7 +61,7 @@ func _set_attractiveness(new_value):
 
 func reset():
 	current_step = 1
-	coins = 500
+	coins = 250
 	income = 0
 	attractiveness = 0
 	technologies = 0
