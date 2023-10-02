@@ -12,10 +12,8 @@ func movement(trnslt:Vector2, x_bound:Vector2, z_bound:Vector2):
 	trnslt_value.z = -trnslt.y
 	
 	var planned_position:Vector3 = self.global_transform.origin + trnslt_value
-	planned_position.x = clamp(planned_position.x, x_bound.x, x_bound.y)
-	planned_position.z = clamp(planned_position.z, z_bound.x, z_bound.y)
 	trnslt_value = planned_position - global_transform.origin
 	
 	self.translate_object_local(trnslt_value)
-	
-#	clamp(trnslt.x, x_bound.x, x_bound.y)
+	self.global_transform.origin.x = clamp(self.global_transform.origin.x, x_bound.x, x_bound.y)
+	self.global_transform.origin.z = clamp(self.global_transform.origin.z, z_bound.x, z_bound.y)
