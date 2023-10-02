@@ -19,4 +19,4 @@ func _ready():
 func _emit_income():
 	if income_particle.emitting:
 		add_child(income_particle.duplicate())
-	income_particle.emitting = true
+	income_particle.restart()
