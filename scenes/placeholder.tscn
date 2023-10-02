@@ -29,7 +29,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01085, 0 )
 shape = SubResource( 2 )
 
 [node name="PlaceholderPoint" type="CSGTorus" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.215738, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.72589, 0 )
 material_override = SubResource( 4 )
 inner_radius = 0.577
 outer_radius = 0.992
