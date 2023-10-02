@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Icon.png-33e63688031d53466d4d656c73cf10ca.stex"
+path="res://.import/CoverWeb.png-cc82fcb4b7e713f5dde2d9af2b4ae5ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icon.png"
-dest_files=[ "res://.import/Icon.png-33e63688031d53466d4d656c73cf10ca.stex" ]
+source_file="res://sources/ConceptArt/CoverWeb.png"
+dest_files=[ "res://.import/CoverWeb.png-cc82fcb4b7e713f5dde2d9af2b4ae5ca.stex" ]
 
 [params]
 

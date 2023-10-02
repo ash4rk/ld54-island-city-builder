@@ -22,6 +22,7 @@ _global_script_class_icons={
 
 config/name="Island City Builder"
 run/main_scene="res://main.tscn"
+boot_splash/image="res://sources/ConceptArt/CoverSplash.png"
 config/icon="res://icon.png"
 
 [autoload]
