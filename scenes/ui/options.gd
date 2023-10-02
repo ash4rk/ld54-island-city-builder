@@ -17,3 +17,7 @@ func _on_MovementSpeedSlider_value_changed(value):
 
 func _on_BackButton_pressed():
 	self.hide()
+
+func _input(event):
+	if event.is_action_pressed("open_options"):
+		self.visible = !self.visible

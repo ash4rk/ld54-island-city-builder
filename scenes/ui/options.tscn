@@ -1,0 +1,129 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/ui/options.gd" type="Script" id=1]
+[ext_resource path="res://assets/main_theme.tres" type="Theme" id=2]
+
+[node name="Options" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="BG" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.815686 )
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -286.0
+margin_top = -146.5
+margin_right = 286.0
+margin_bottom = 146.5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+margin_left = 48.0
+margin_top = 34.0
+margin_right = 524.0
+margin_bottom = 259.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_right = 476.0
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Panel/VBoxContainer"]
+margin_top = 4.0
+margin_right = 476.0
+margin_bottom = 176.0
+columns = 2
+
+[node name="Music" type="Label" parent="Panel/VBoxContainer/GridContainer"]
+margin_top = 1.0
+margin_right = 352.0
+margin_bottom = 38.0
+text = "Music: "
+align = 2
+
+[node name="MusicSlider" type="HSlider" parent="Panel/VBoxContainer/GridContainer"]
+margin_left = 356.0
+margin_right = 476.0
+margin_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 120, 40 )
+min_value = -80.0
+max_value = 5.0
+value = -16.0
+
+[node name="SFX" type="Label" parent="Panel/VBoxContainer/GridContainer"]
+margin_top = 45.0
+margin_right = 352.0
+margin_bottom = 82.0
+text = "SFX: "
+align = 2
+
+[node name="SFXSlider" type="HSlider" parent="Panel/VBoxContainer/GridContainer"]
+margin_left = 356.0
+margin_top = 44.0
+margin_right = 476.0
+margin_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 120, 40 )
+min_value = -80.0
+max_value = 5.0
+value = -3.0
+
+[node name="OrbitSpeed" type="Label" parent="Panel/VBoxContainer/GridContainer"]
+margin_top = 89.0
+margin_right = 352.0
+margin_bottom = 126.0
+text = "Orbit Speed: "
+align = 2
+
+[node name="OrbitSpeedSlider" type="HSlider" parent="Panel/VBoxContainer/GridContainer"]
+margin_left = 356.0
+margin_top = 88.0
+margin_right = 476.0
+margin_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 120, 40 )
+min_value = 0.1
+max_value = 3.0
+step = 0.1
+value = 1.0
+
+[node name="MovementSpeed" type="Label" parent="Panel/VBoxContainer/GridContainer"]
+margin_top = 133.0
+margin_right = 352.0
+margin_bottom = 170.0
+text = "Movement Speed: "
+align = 2
+
+[node name="MovementSpeedSlider" type="HSlider" parent="Panel/VBoxContainer/GridContainer"]
+margin_left = 356.0
+margin_top = 132.0
+margin_right = 476.0
+margin_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 120, 40 )
+min_value = 5.0
+max_value = 50.0
+value = 20.0
+
+[node name="BackButton" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 180.0
+margin_right = 476.0
+margin_bottom = 225.0
+text = "Back"
+
+[connection signal="value_changed" from="Panel/VBoxContainer/GridContainer/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="value_changed" from="Panel/VBoxContainer/GridContainer/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
+[connection signal="value_changed" from="Panel/VBoxContainer/GridContainer/OrbitSpeedSlider" to="." method="_on_OrbitSpeedSlider_value_changed"]
+[connection signal="value_changed" from="Panel/VBoxContainer/GridContainer/MovementSpeedSlider" to="." method="_on_MovementSpeedSlider_value_changed"]
+[connection signal="pressed" from="Panel/VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
