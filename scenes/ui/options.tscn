@@ -1,7 +1,46 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/ui/options.gd" type="Script" id=1]
 [ext_resource path="res://assets/main_theme.tres" type="Theme" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.803922, 0.435294, 0.435294, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.862745, 0.611765, 0.611765, 1 )
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.494118, 0.00392157, 0.00392157, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.368627, 0.117647, 0.117647, 1 )
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.823529, 0.0117647, 0.0117647, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.850098, 0.292221, 0.292221, 1 )
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="Options" type="Control"]
 anchor_right = 1.0
@@ -28,16 +67,17 @@ margin_bottom = 146.5
 margin_left = 48.0
 margin_top = 34.0
 margin_right = 524.0
-margin_bottom = 259.0
+margin_bottom = 355.0
+custom_constants/separation = 17
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
 margin_right = 476.0
 alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="Panel/VBoxContainer"]
-margin_top = 4.0
+margin_top = 17.0
 margin_right = 476.0
-margin_bottom = 176.0
+margin_bottom = 189.0
 columns = 2
 
 [node name="Music" type="Label" parent="Panel/VBoxContainer/GridContainer"]
@@ -117,13 +157,24 @@ max_value = 50.0
 value = 20.0
 
 [node name="BackButton" type="Button" parent="Panel/VBoxContainer"]
-margin_top = 180.0
+margin_top = 206.0
 margin_right = 476.0
-margin_bottom = 225.0
+margin_bottom = 251.0
 text = "Back"
 
+[node name="RestartButton" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 268.0
+margin_right = 476.0
+margin_bottom = 321.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Restart"
+
+[connection signal="visibility_changed" from="." to="." method="_on_Options_visibility_changed"]
 [connection signal="value_changed" from="Panel/VBoxContainer/GridContainer/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
 [connection signal="value_changed" from="Panel/VBoxContainer/GridContainer/SFXSlider" to="." method="_on_SFXSlider_value_changed"]
 [connection signal="value_changed" from="Panel/VBoxContainer/GridContainer/OrbitSpeedSlider" to="." method="_on_OrbitSpeedSlider_value_changed"]
 [connection signal="value_changed" from="Panel/VBoxContainer/GridContainer/MovementSpeedSlider" to="." method="_on_MovementSpeedSlider_value_changed"]
 [connection signal="pressed" from="Panel/VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
