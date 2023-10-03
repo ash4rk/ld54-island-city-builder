@@ -64,8 +64,8 @@ size = Vector2( 800, 800 )
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.0235294, 0.360784, 1, 1 )
-metallic_specular = 0.71
-roughness = 0.18
+metallic_specular = 0.84
+roughness = 0.16
 
 [node name="Main" type="Node"]
 script = ExtResource( 12 )
@@ -74,10 +74,11 @@ script = ExtResource( 12 )
 
 [node name="Sun" type="DirectionalLight" parent="World"]
 transform = Transform( 0.936833, -0.239153, 0.255244, 0.0455902, 0.806998, 0.588791, -0.346793, -0.539963, 0.766926, -0.392812, 8.13758, 5.02091 )
-light_color = Color( 1, 0.996078, 0.992157, 1 )
-light_energy = 0.8
-light_specular = 0.0
+light_color = Color( 1, 0.996078, 0.960784, 1 )
+light_energy = 0.735
+light_specular = 1.954
 shadow_enabled = true
+shadow_bias = 0.05
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="World"]
 environment = ExtResource( 15 )
@@ -142,7 +143,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.7196, -2.1572, 11.6937 )
 terrain_tags = 1
 
 [node name="Placeholder11" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1781, -0.434088, -1.64169 )
+transform = Transform( 0.315699, 0, -0.94886, 0, 1, 0, 0.94886, 0, 0.315699, -14.1781, -0.434088, -1.64169 )
 terrain_tags = 4
 
 [node name="Placeholder12" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
@@ -170,7 +171,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.2501, -2.0843, -24.3581 )
 terrain_tags = 1
 
 [node name="Placeholder18" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.596, 3.57916, -23.728 )
+transform = Transform( 0.841812, 0, -0.53977, 0, 1, 0, 0.53977, 0, 0.841812, -19.596, 3.57916, -23.728 )
 terrain_tags = 4
 
 [node name="Placeholder19" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
@@ -178,7 +179,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3297, -0.104194, 9.71049 )
 terrain_tags = 4
 
 [node name="Placeholder20" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.8264, 1.15415, 12.6587 )
+transform = Transform( -0.237448, 0, -0.9714, 0, 1, 0, 0.9714, 0, -0.237448, 35.8264, 1.15415, 12.6587 )
 terrain_tags = 4
 
 [node name="Placeholder21" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
@@ -190,7 +191,7 @@ transform = Transform( 0.586528, 0, -0.809929, 0, 1, 0, 0.809929, 0, 0.586528, 1
 terrain_tags = 4
 
 [node name="Placeholder23" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 0.834011, 0, -0.551748, 0, 1, 0, 0.551748, 0, 0.834011, 6.12242, -1.13838, -7.0656 )
+transform = Transform( -0.87106, 0, 0.491178, 0, 1, 0, -0.491178, 0, -0.87106, 6.12242, -1.13838, -7.0656 )
 terrain_tags = 4
 
 [node name="Placeholder24" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
@@ -202,23 +203,23 @@ transform = Transform( 0.131859, 0, -0.991269, 0, 1, 0, 0.991269, 0, 0.131859, 3
 terrain_tags = 2
 
 [node name="Placeholder26" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.7133, 4.01128, -33.4646 )
+transform = Transform( 0.000890092, 0, -1, 0, 1, 0, 1, 0, 0.000890092, -22.7133, 4.01128, -33.4646 )
 terrain_tags = 4
 
 [node name="Placeholder27" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.664, 3.50248, -36.6508 )
+transform = Transform( 0.97671, 0, -0.214565, 0, 1, 0, 0.214565, 0, 0.97671, -15.634, 3.50248, -36.6508 )
 terrain_tags = 4
 
 [node name="Placeholder28" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49941, 3.13153, -25.8009 )
+transform = Transform( -0.43655, 0, -0.89968, 0, 1, 0, 0.89968, 0, -0.43655, -2.49941, 3.13153, -25.8009 )
 terrain_tags = 4
 
 [node name="Placeholder29" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9866, 3.76924, -29.8445 )
+transform = Transform( 0.975056, 0, 0.221957, 0, 1, 0, -0.221957, 0, 0.975056, -16.9866, 3.76924, -29.8445 )
 terrain_tags = 4
 
 [node name="Placeholder30" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.52474, 3.32336, -32.503 )
+transform = Transform( 0.969188, 0, -0.246322, 0, 1, 0, 0.246322, 0, 0.969188, -6.52474, 3.32336, -32.503 )
 terrain_tags = 4
 
 [node name="Placeholder31" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
@@ -226,15 +227,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.536142, 0.497261, -49.2063 
 terrain_tags = 4
 
 [node name="Placeholder32" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.6464, 2.12296, -30.7931 )
+transform = Transform( 0.0386668, 0, 0.999252, 0, 1, 0, -0.999252, 0, 0.0386668, -28.6464, 2.12296, -30.7931 )
 terrain_tags = 4
 
 [node name="Placeholder33" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.702997, -1.58389, 0.0221367 )
+transform = Transform( 0.758055, 0, -0.652191, 0, 1, 0, 0.652191, 0, 0.758055, -0.702997, -1.58389, 0.0221367 )
 terrain_tags = 4
 
 [node name="Placeholder34" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.522421, -0.799854, 12.2589 )
+transform = Transform( -0.0134386, 0, -0.99991, 0, 1, 0, 0.99991, 0, -0.0134386, 0.522421, -0.799854, 12.2589 )
 terrain_tags = 4
 
 [node name="Placeholder35" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
@@ -270,7 +271,7 @@ transform = Transform( -0.993977, 0, 0.109596, 0, 1, 0, -0.109596, 0, -0.993977,
 terrain_tags = 2
 
 [node name="Placeholder43" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5471, 1.7928, 9.64861 )
+transform = Transform( 0.536799, 0, -0.84371, 0, 1, 0, 0.84371, 0, 0.536799, 26.5471, 1.7928, 9.64861 )
 terrain_tags = 4
 
 [node name="Placeholder44" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
@@ -278,11 +279,11 @@ transform = Transform( 0.92959, 0, -0.368595, 0, 1, 0, 0.368595, 0, 0.92959, -39
 terrain_tags = 1
 
 [node name="Placeholder45" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.3583, 3.20531, 1.00284 )
+transform = Transform( 0.221736, 0, -0.975107, 0, 1, 0, 0.975107, 0, 0.221736, 33.3583, 3.20531, 1.00284 )
 terrain_tags = 4
 
 [node name="Placeholder46" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9166, 2.5872, 0.558371 )
+transform = Transform( -0.999473, 0, 0.0324575, 0, 1, 0, -0.0324575, 0, -0.999473, 25.9166, 2.5872, 0.558371 )
 terrain_tags = 4
 
 [node name="Placeholder47" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
@@ -298,7 +299,7 @@ transform = Transform( -0.967946, 0, -0.251157, 0, 1, 0, 0.251157, 0, -0.967946,
 terrain_tags = 2
 
 [node name="Placeholder50" parent="World/Buildings/Placeholders" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.8561, -0.529427, -53.5789 )
+transform = Transform( 0.990922, 0, 0.134436, 0, 1, 0, -0.134436, 0, 0.990922, -19.8561, -0.529427, -53.5789 )
 terrain_tags = 4
 
 [node name="Sea" type="CSGMesh" parent="World"]

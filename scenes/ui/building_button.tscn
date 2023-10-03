@@ -78,7 +78,7 @@ text = "0"
 margin_top = 72.0
 margin_right = 88.0
 margin_bottom = 86.0
-text = "Attractivness:"
+text = "Attractiveness:"
 
 [node name="AttractivnessValueLabel" type="Label" parent="InfoPanel/VBoxContainer"]
 margin_left = 92.0

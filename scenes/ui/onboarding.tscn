@@ -33,10 +33,9 @@ margin_left = 48.0
 margin_top = 51.0
 margin_right = 452.0
 margin_bottom = 448.0
-text = "Your uncle and investor gave you 250 of money and asked you to manage the island.
+text = "Your uncle (he is also an investor) gave you 250 of money and asked you to manage the island.
 
-\"Make the Island Great Again\" - he said.
-"
+\"Make the Island Great Again\" - he said."
 autowrap = true
 
 [node name="Page2" type="Control" parent="."]
@@ -60,7 +59,7 @@ margin_left = 48.0
 margin_top = 54.0
 margin_right = 487.0
 margin_bottom = 451.0
-text = "You goal is to make the Island to be attractive for tourists, and to develop high-end technological advancement. Also you should give your ancle at least 1300 money back."
+text = "Your goal is to make the Island to be attractive for tourists, and to develop high-end technological advancement. Also you should give your uncle at least 1300 money back."
 autowrap = true
 
 [node name="Hint1" type="ColorRect" parent="Page2"]
