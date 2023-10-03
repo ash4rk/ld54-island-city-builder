@@ -72,7 +72,7 @@ func _generate_game_over_text():
 	if Global.technologies <= LOW_LEVEL_TECHNOLOGIES:
 		techonologies_mark.text = "- BAD!"
 		techonologies_mark.modulate = Color.red
-	elif Global.technologies > LOW_LEVEL_TECHNOLOGIES and Global.attractiveness < HIGH_LEVEL_TECHNOLOGIES:
+	elif Global.technologies > LOW_LEVEL_TECHNOLOGIES and Global.technologies < HIGH_LEVEL_TECHNOLOGIES:
 		techonologies_mark.text = "- Good"
 		techonologies_mark.modulate = Color.yellow
 	else:
